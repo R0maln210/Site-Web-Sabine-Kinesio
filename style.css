@@ -1,0 +1,25 @@
+.root{
+  --vert: rgb(51, 91, 43);
+  --blanc: rgb(255, 255, 255);
+  --beige: rgb(245,245,220);
+  --noir: rgb(0, 0, 0);
+  --font-family: Georgia, serif;
+  --font-size: 12px;
+  --letter-spacing: 0.6px;
+  --word-spacing: -1.2px;
+  --color: #000000;
+  --font-weight: 400;
+  --text-decoration: none;
+  --font-style: normal;
+  --font-variant: normal;
+  --text-transform: none;
+}
+
+.titre{
+    color: var(--vert);
+}
+
+.divisions{
+    margin-left: 5px;
+
+}
