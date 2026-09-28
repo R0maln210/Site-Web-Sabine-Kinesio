@@ -1,0 +1,70 @@
+:root {
+  --vert: rgb(51, 91, 43);
+  --blanc: rgb(255, 255, 255);
+  --beige: rgb(245,245,220);
+  --noir: rgb(0, 0, 0);
+  --font-family: Georgia, serif;
+}
+
+.titre {
+  color: var(--vert);
+}
+
+.circle-wrapper {
+  position: relative;
+  width: 750px;
+  height: auto;
+  margin: 3rem auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.center-image {
+  width: 540px;
+  height: 540px;
+  z-index: 1;
+}
+
+.center-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.btn {
+  position: absolute;
+  background: transparent;
+  border: none;
+  font-size: 15px;
+  font-weight: 500;
+  cursor: pointer;
+  padding: 8px 14px;
+  white-space: nowrap;
+  transition: all 0.2s ease;
+}
+
+.btn:hover {
+  background-color: rgba(71, 108, 41, 0.15);
+  border-radius: 20px;
+}
+
+.btn-left-1, .btn-left-2, .btn-left-3, .btn-left-4 {
+  right: calc(50% + 190px); 
+  text-align: right;
+}
+
+.btn-left-1 { top: 5%;  transform: translateX(50px); }  /* En haut, rentre vers le logo */
+.btn-left-2 { top: 30%;  transform: translateX(-70px); }   /* Milieu-haut, max écarté */
+.btn-left-3 { top: 60%;  transform: translateX(-70px); }   /* Milieu-bas, max écarté */
+.btn-left-4 { top: 80%;  transform: translateX(40px); }  /* En bas, rentre vers le logo */
+
+.btn-right-1, .btn-right-2, .btn-right-3, .btn-right-4 {
+  left: calc(50% + 190px); 
+  text-align: left;
+}
+
+.btn-right-1 { top: 5%;  transform: translateX(-50px); } /* En haut, rentre vers le logo */
+.btn-right-2 { top: 30%;  transform: translateX(70px); }    /* Milieu-haut, max écarté */
+.btn-right-3 { top: 60%;  transform: translateX(70px); }    /* Milieu-bas, max écarté */
+.btn-right-4 { top: 80%;  transform: translateX(-40px); }  /* En bas, rentre vers le logo */
