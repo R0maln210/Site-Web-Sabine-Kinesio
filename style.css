@@ -1,5 +1,6 @@
 :root {
   --vert: rgb(51, 91, 43);
+  --vertBaniere: #00674F;
   --vert-light: rgba(51, 91, 43, 0.15);
   --font-family: Georgia, serif;
   
@@ -113,9 +114,11 @@
 .btn-right-4 { --angle: 55deg;  transform-origin: left center; }
 
 
+/* FOOTER */
+
 .trait {
-  border: none;
-  height: 3px;
+  height: 2px;
+  	background-color: var(--vert);
 }
 
 .footer {
@@ -126,25 +129,28 @@
 
 .navFooter {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: flex-start;
   font-size:18px;
-  padding-right: 20px;
+  gap: 100px;
 }
 
-.footerColonneReseau {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  gap: 12px;
+.navFooter p {
+  font-size: 15px;
+  font-family: var(--font-family);
+}
+
+.footerColonneCabinet {
+  text-align: right;
 }
 
 .footerColonneReseau a {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 24px;
-  height: 24px;
+  display: flex;
+  margin-top: 10px;
+  margin-left: 60px;
+  width: 40px;
+  height: 40px;
+
 }
 
 .footerColonneReseau svg {
