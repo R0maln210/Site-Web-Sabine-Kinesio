@@ -113,6 +113,11 @@
 .btn-right-4 { --angle: 55deg;  transform-origin: left center; }
 
 
+.trait {
+  border: none;
+  height: 3px;
+}
+
 .footer {
   display: flex;
   flex-direction: column;
