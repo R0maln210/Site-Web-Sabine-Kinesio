@@ -1,6 +1,5 @@
 :root {
   --vert: rgb(51, 91, 43);
-  --vertBaniere: #00674F;
   --vert-light: rgba(51, 91, 43, 0.15);
   --font-family: Georgia, serif;
 }
@@ -76,121 +75,11 @@ body {
   height: auto;
 }
 
-<<<<<<< HEAD
 .main-content {
   max-width: 1400px;
   margin: 3rem auto 2rem;
   padding: 0 2rem;
 }
-=======
-/* FOOTER */
-
-.trait {
-  height: 2px;
-  	background-color: var(--vert);
-}
-
-.footer {
-  display: flex;
-  flex-direction: column;
-  padding: 20px;
-}
-
-.navFooter {
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  font-size:18px;
-  gap: 100px;
-}
-
-.navFooter p {
-  font-size: 15px;
-  font-family: var(--font-family);
-}
-
-.footerColonneCabinet {
-  text-align: right;
-}
-
-.footerColonneReseau a {
-  display: flex;
-  margin-top: 10px;
-  margin-left: 60px;
-  width: 40px;
-  height: 40px;
-
-}
-
-.footerColonneReseau svg {
-  width: 100%;
-  height: 100%;
-  display: block;
-}
-
-.copyright {
-  text-align: center;
-  margin-top: 30px;
-  font-size: 14px;
-  color: #666;
-}
-
-/* FOOTER */
-
-.trait {
-  height: 2px;
-  	background-color: var(--vert);
-}
-
-.footer {
-  display: flex;
-  flex-direction: column;
-  padding: 20px;
-}
-
-.navFooter {
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  font-size:18px;
-  gap: 100px;
-}
-
-.navFooter p {
-  font-size: 15px;
-  font-family: var(--font-family);
-}
-
-.footerColonneCabinet {
-  text-align: right;
-}
-
-.footerColonneReseau a {
-  display: flex;
-  margin-top: 10px;
-  margin-left: 60px;
-  width: 40px;
-  height: 40px;
-
-}
-
-.footerColonneReseau svg {
-  width: 100%;
-  height: 100%;
-  display: block;
-}
-
-.copyright {
-  text-align: center;
-  margin-top: 30px;
-  font-size: 14px;
-  color: #666;
-}
-
-/* =========================================================
-   RESPONSIVE : TABLETTE & MOBILE
-   ========================================================= */
->>>>>>> origin/main
 
 .infos {
   display: flex;
@@ -205,11 +94,6 @@ body {
   text-align: center;
 }
 
-.info img {
-  width: 160px;
-  height: auto;
-  margin-bottom: 10px;
-}
 
 .info h2 {
   margin: 0 0 15px;
