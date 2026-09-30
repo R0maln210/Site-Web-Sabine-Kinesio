@@ -1,297 +1,234 @@
 :root {
   --vert: rgb(51, 91, 43);
+  --vertBaniere: #00674F;
   --vert-light: rgba(51, 91, 43, 0.15);
   --font-family: Georgia, serif;
-  
-  --radius: min(32vw, 320px);
-<<<<<<< HEAD
+  --font-bebas: "Bebas Neue", sans-serif;
+  --white: #fff;
 }
-
-.circle-wrapper {
-  position: relative;
-  width: calc(var(--radius) * 2.4);
-  height: calc(var(--radius) * 2.4);
-  margin: 3rem auto;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+ 
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
-
-.center-image {
-  position: relative;
-  width: calc(var(--radius) * 1.2);
-  height: calc(var(--radius) * 1.2);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.center-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-}
-
-/* 1. Animation basée UNIQUEMENT sur la lueur et l'opacité */
-@keyframes breathing-glow {
-  0% {
-    box-shadow: 0 0 20px 4px rgba(68, 126, 57, 0.3);
-    opacity: 0.75;
-  }
-  50% {
-    box-shadow: 0 0 45px 16px rgba(68, 126, 57, 0.65);
-    opacity: 1;
-  }
-  100% {
-    box-shadow: 0 0 20px 4px rgba(68, 126, 57, 0.3);
-    opacity: 0.75;
-  }
-}
-
-.center-image::after {
-  content: "";
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 49%; 
-  aspect-ratio: 1 / 1;
-  border-radius: 50%;
-  transform: translate(-50%, -64%);
-  box-shadow: 0 0 25px 6px rgba(51, 91, 43, 0.4);
-  pointer-events: none;
-  z-index: -1;
-  
-  animation: breathing-glow 4s ease-in-out infinite;
-}
-
-/* BOUTONS EN POSITION CIRCULAIRE PARFAITE (TRIGONOMÉTRIE CSS) */
-.btn {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  background: transparent;
-  border: none;
+ 
+body {
   font-family: var(--font-family);
-  font-size: clamp(20px, 1.2vw, 32px);
+  background-color: #fff;
+}
+ 
+/* HEADER & NAV */
+.main-header {
+  width: 100%;
+  padding-top: 1rem;
+}
+ 
+.nav-line {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+  align-items: center;
+  max-width: 1700px;
+  margin: 0 auto;
+  padding: 0 1rem;
+  z-index: 10;
+}
+
+ 
+.nav-group {
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  transform: translateY(-2rem);
+}
+ 
+.btn {
+  background: transparent;
+  border: 1px solid transparent;
+  font-family: var(--font-bebas);
+  font-size: clamp(1rem, 1.1vw, 1.2rem);
+  color: #fff;
   font-weight: 500;
   cursor: pointer;
-  padding: 6px 12px;
+  padding: 8px clamp(6px, 0.8vw, 12px);
   white-space: nowrap;
   transition: all 0.2s ease;
-  
-  /* Placement sur le cercle via l'angle défini dans --angle */
-  transform: 
-    translate(-50%, -50%) 
-    rotate(var(--angle)) 
-    translate(var(--radius)) 
-    rotate(calc(-1 * var(--angle)));
+  z-index: 30;
 }
-
+ 
 .btn:hover {
   background-color: var(--vert-light);
-  transform: 
-    translate(-50%, -50%) 
-    rotate(var(--angle)) 
-    translate(calc(var(--radius) + 8px)) 
-    rotate(calc(-1 * var(--angle)));
+  border: 1px solid var(--vert);
+  box-shadow: 0 0 15px rgba(51, 91, 43, 0.3);
 }
-
-/* 
-  DEFINITON DES ANGLES (En Degrés)
-  0deg = Droite | 90deg = Bas | 180deg = Gauche | 270deg = Haut
-*/
-
-/* Gauche (Alignés vers la droite pour coller à l'arc) */
-.btn-left-1 { --angle: 235deg; transform-origin: right center; }
-.btn-left-2 { --angle: 198deg; transform-origin: right center; }
-.btn-left-3 { --angle: 162deg; transform-origin: right center; }
-.btn-left-4 { --angle: 125deg; transform-origin: right center; }
-
-/* Droite (Alignés vers la gauche pour coller à l'arc) */
-.btn-right-1 { --angle: 305deg; transform-origin: left center; }
-.btn-right-2 { --angle: 342deg; transform-origin: left center; }
-.btn-right-3 { --angle: 18deg;  transform-origin: left center; }
-.btn-right-4 { --angle: 55deg;  transform-origin: left center; }
-
-
-/* =========================================================
-   RESPONSIVE : TABLETTE & MOBILE
-   ========================================================= */
-
-@media (max-width: 768px) {
-  .circle-wrapper {
-    width: 100%;
-    height: auto;
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-  }
-
-  .btn {
-    position: static;
-    transform: none !important;
-    width: 90%;
-    max-width: 320px;
-    text-align: center !important;
-    padding: 12px;
-    background-color: var(--vert-light);
-    border-radius: 8px;
-  }
-
-  .center-image {
-    width: 220px;
-    height: 220px;
-    order: -1; 
-  }
+ 
+.buddha-center {
+  padding: 0 1rem;
+  filter: brightness(0) invert(1);
 }
-
+ 
+.buddha-center img {
+  position: relative;
+  width: 180px;
+  height: auto;
+  display: block;
+  cursor: pointer;
+  left: 0;
+  top: -2rem;
+  z-index: 30;
+}
+ 
+.brand-text {
+  filter: brightness(0) invert(1);
+  text-align: center;
+  position: relative;
+  left: 0;
+  top: -20.5rem;
+}
+ 
+.brand-text img {
+  width: 220px;
+  height: auto;
+}
+ 
+/* CONTENU PRINCIPAL */
+.main-content {
+  max-width: 1400px;
+  margin: 3rem auto 2rem;
+  padding: 0 2rem;
+}
+ 
+.infos {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 100%;
+  gap: 40px;
+}
+ 
+.info {
+  flex: 1;
+  text-align: center;
+}
+ 
+.info img {
+  width: 160px;
+  height: auto;
+  margin-bottom: 10px;
+}
+ 
+.info h2 {
+  margin: 0 0 15px;
+}
+ 
+.info p {
+  font-size: 16px;
+  line-height: 1.6;
+  margin: 15px 0;
+}
+ 
+/* FOOTER */
+.trait {
+  height: 2px;
+  background-color: var(--vert);
+}
+ 
+.footer {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
+ 
 .navFooter {
-    display: flex;
-    justify-content: space-between;
-    font-size:20px;
-
-}
-
-.titre {
-  color: var(--vert);
-=======
->>>>>>> 398c194b6586b5fe7ea6f366f6a1ebc44658322f
-}
-
-.circle-wrapper {
-  position: relative;
-  width: calc(var(--radius) * 2.4);
-  height: calc(var(--radius) * 2.4);
-  margin: 3rem auto;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
+  font-size: 18px;
+  gap: 100px;
 }
-
-.center-image {
-  position: relative;
-  width: calc(var(--radius) * 1.2);
-  height: calc(var(--radius) * 1.2);
+ 
+.navFooter p {
+  font-size: 15px;
+  font-family: var(--font-family);
+}
+ 
+.footerColonneCabinet {
+  text-align: right;
+}
+ 
+.footerColonneReseau a {
   display: flex;
-  justify-content: center;
-  align-items: center;
+  margin-top: 10px;
+  margin-left: 60px;
+  width: 40px;
+  height: 40px;
 }
-
-.center-image img {
+ 
+.footerColonneReseau svg {
   width: 100%;
   height: 100%;
-  object-fit: contain;
+  display: block;
 }
-
-/* 1. Animation basée UNIQUEMENT sur la lueur et l'opacité */
-@keyframes breathing-glow {
-  0% {
-    box-shadow: 0 0 20px 4px rgba(68, 126, 57, 0.3);
-    opacity: 0.75;
-  }
-  50% {
-    box-shadow: 0 0 45px 16px rgba(68, 126, 57, 0.65);
-    opacity: 1;
-  }
-  100% {
-    box-shadow: 0 0 20px 4px rgba(68, 126, 57, 0.3);
-    opacity: 0.75;
-  }
+       
+.rectangle {
+  position: absolute;/* Passe derriere le header */
+  width: 100%;/* Largeur du rectangle */
+  height: 13rem;/* Hauteur (différente de la largeur) */
+  background-color: var(--vertBaniere);/* Couleur de fond (bleu) */
+  z-index: -5;
+  cursor: none;
+  pointer-events: none; /* 👈 laisse les clics passer */
 }
-
-.center-image::after {
-  content: "";
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 49%; 
-  aspect-ratio: 1 / 1;
-  border-radius: 50%;
-  transform: translate(-50%, -64%);
-  box-shadow: 0 0 25px 6px rgba(51, 91, 43, 0.4);
-  pointer-events: none;
-  z-index: -1;
-  
-  animation: breathing-glow 4s ease-in-out infinite;
+            
+.copyright {
+  text-align: center;
+  margin-top: 30px;
+  font-size: 14px;
+  color: #666;
 }
-
-/* BOUTONS EN POSITION CIRCULAIRE PARFAITE (TRIGONOMÉTRIE CSS) */
-.btn {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  background: transparent;
-  border: none;
-  font-family: var(--font-family);
-  font-size: clamp(20px, 1.2vw, 32px);
-  font-weight: 500;
-  cursor: pointer;
-  padding: 6px 12px;
-  white-space: nowrap;
-  transition: all 0.2s ease;
-  
-  /* Placement sur le cercle via l'angle défini dans --angle */
-  transform: 
-    translate(-50%, -50%) 
-    rotate(var(--angle)) 
-    translate(var(--radius)) 
-    rotate(calc(-1 * var(--angle)));
-}
-
-.btn:hover {
-  background-color: var(--vert-light);
-  transform: 
-    translate(-50%, -50%) 
-    rotate(var(--angle)) 
-    translate(calc(var(--radius) + 8px)) 
-    rotate(calc(-1 * var(--angle)));
-}
-
-/* 
-  DEFINITON DES ANGLES (En Degrés)
-  0deg = Droite | 90deg = Bas | 180deg = Gauche | 270deg = Haut
-*/
-
-/* Gauche (Alignés vers la droite pour coller à l'arc) */
-.btn-left-1 { --angle: 235deg; transform-origin: right center; }
-.btn-left-2 { --angle: 198deg; transform-origin: right center; }
-.btn-left-3 { --angle: 162deg; transform-origin: right center; }
-.btn-left-4 { --angle: 125deg; transform-origin: right center; }
-
-/* Droite (Alignés vers la gauche pour coller à l'arc) */
-.btn-right-1 { --angle: 305deg; transform-origin: left center; }
-.btn-right-2 { --angle: 342deg; transform-origin: left center; }
-.btn-right-3 { --angle: 18deg;  transform-origin: left center; }
-.btn-right-4 { --angle: 55deg;  transform-origin: left center; }
-
-
-/* =========================================================
-   RESPONSIVE : TABLETTE & MOBILE
-   ========================================================= */
-
-@media (max-width: 768px) {
-  .circle-wrapper {
-    width: 100%;
-    height: auto;
+ 
+/* RESPONSIVE */
+@media (max-width: 1200px) {
+  .nav-line {
     display: flex;
     flex-direction: column;
-    gap: 1.5rem;
+    gap: 1rem;
   }
-
+ 
+  .buddha-center {
+    order: -1;
+  }
+ 
+  .nav-group {
+    flex-direction: column;
+    width: 100%;
+  }
+ 
   .btn {
-    position: static;
-    transform: none !important;
-    width: 90%;
-    max-width: 320px;
-    text-align: center !important;
-    padding: 12px;
+    width: 100%;
+    max-width: 300px;
     background-color: var(--vert-light);
-    border-radius: 8px;
+    border-radius: 6px;
+    text-align: center;
   }
-
-  .center-image {
-    width: 220px;
-    height: 220px;
-    order: -1; 
+ 
+  .infos {
+    flex-direction: column;
+    align-items: center;
+  }
+ 
+  .navFooter {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+ 
+  .footerColonneCabinet {
+    text-align: center;
+  }
+ 
+  .footerColonneReseau a {
+    margin-left: 0;
   }
 }
