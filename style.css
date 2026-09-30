@@ -112,6 +112,50 @@ body {
   line-height: 1.6;
   margin: 15px 0;
 }
+
+.titreQuiSuisJe {
+  display: flex;
+  padding-top: 50px;
+  font-family: var(--font-family);
+  color: var(--vertBaniere);
+  font-size: 60px;
+  justify-content: center;
+}
+
+.quiSuisJe {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 25px;
+  padding-top: 50px;
+}
+
+.photoSabine {
+  max-width: 600px;
+  max-height: 350px;
+  border: 12px solid var(--vertBaniere);
+  box-shadow: inset 0 0 0 2px var(--vertBaniere);
+}
+
+.texteQuiSuisJe {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.texteQuiSuisJe p {
+  font-family: var(--font-family);
+}
+
+.texteGrasFonce {
+  color:var(--vertBaniere);
+  font-weight: bold;
+}
+
+.texteQuiSuisJeColle {
+  display: flex;
+  flex-direction: column;
+}
  
 /* FOOTER */
 .trait {
@@ -123,6 +167,7 @@ body {
   display: flex;
   flex-direction: column;
   padding: 20px;
+  padding-top: 40px;
 }
  
 .navFooter {
@@ -136,6 +181,7 @@ body {
 .navFooter p {
   font-size: 15px;
   font-family: var(--font-family);
+  padding-top: 15px;
 }
  
 .footerColonneCabinet {
