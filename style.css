@@ -28,7 +28,8 @@ body {
   display: grid;
   grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
   align-items: center;
-  max-width: 1700px;
+  max-width: 1850px;
+  max-height: 500px;
   margin: 0 auto;
   padding: 0 1rem;
   z-index: 10;
@@ -45,7 +46,7 @@ body {
  
 .btn {
   background: transparent;
-  border: 1px solid transparent;
+  border: 5px solid transparent;
   font-family: var(--font-bebas);
   font-size: clamp(1rem, 1.1vw, 1.2rem);
   color: #fff;
@@ -56,11 +57,44 @@ body {
   transition: all 0.2s ease;
   z-index: 30;
 }
+
+.btn-rdv {
+  background-color: #fff;
+  border: 5px solid var(--vert);
+  border-radius: 12px;
+  font-size: clamp(1rem, 1.1vw, 1.2rem);
+  color: var(--vert);
+  font-weight: 500;
+  cursor: pointer;
+  z-index: 30;
+}
  
 .btn:hover {
-  background-color: var(--vert-light);
+  background-color: #fff;
   border: 1px solid var(--vert);
   box-shadow: 0 0 15px rgba(51, 91, 43, 0.3);
+  color: rgb(29, 88, 17);
+  border-radius: 12px;
+}
+
+.btn-rdv:hover {
+  background-color: var(--vert);
+  border: 20px solid var(--vert);
+  box-shadow: 0 0 15px rgba(51, 91, 43, 0.3);
+  color: #fff;
+  animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
 }
  
 .buddha-center {
@@ -85,6 +119,7 @@ body {
   position: relative;
   left: 0;
   top: -20.5rem;
+  margin-bottom: -20.5rem; /* compense l'espace laissé par le top négatif */
 }
  
 .brand-text img {
@@ -116,6 +151,9 @@ body {
   width: 160px;
   height: auto;
   margin-bottom: 10px;
+  filter: brightness(0) saturate(100%)
+            invert(32%) sepia(18%) saturate(900%)
+            hue-rotate(70deg) brightness(90%);
 }
  
 .info h2 {
@@ -175,7 +213,7 @@ body {
   position: absolute;/* Passe derriere le header */
   width: 100%;/* Largeur du rectangle */
   height: 13rem;/* Hauteur (différente de la largeur) */
-  background-color: var(--vertBaniere);/* Couleur de fond (bleu) */
+  background-color: rgb(51, 91, 43);/* Couleur de fond (bleu) */
   z-index: -5;
   cursor: none;
   pointer-events: none; /* 👈 laisse les clics passer */
