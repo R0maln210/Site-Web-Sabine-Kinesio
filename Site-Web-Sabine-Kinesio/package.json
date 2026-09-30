@@ -1,0 +1,21 @@
+{
+  "name": "site-web-sabine-kinesio",
+  "version": "1.0.0",
+  "description": "Projet PPE consistant à refaire le site web de Sabine Jaquet-Gut",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/R0maln210/Site-Web-Sabine-Kinesio.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/R0maln210/Site-Web-Sabine-Kinesio/issues"
+  },
+  "homepage": "https://github.com/R0maln210/Site-Web-Sabine-Kinesio#readme"
+}
