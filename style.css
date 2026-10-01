@@ -78,6 +78,8 @@ body {
 }
  
 /* CONTENU PRINCIPAL */
+
+/*SECTION PRESENTATION ET TARIFS*/
 .main-content {
   max-width: 1400px;
   margin: 3rem auto 2rem;
@@ -113,6 +115,8 @@ body {
   margin: 15px 0;
 }
 
+/*SECTION QUI SUIS JE*/
+
 .titreQuiSuisJe {
   display: flex;
   padding-top: 50px;
@@ -124,39 +128,49 @@ body {
 
 .quiSuisJe {
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
   gap: 25px;
   padding-top: 50px;
+  color: var(--vertBaniere);
+  font-size: 23px;
 }
 
 .photoSabine {
   max-width: 600px;
-  max-height: 350px;
-  border: 12px solid var(--vertBaniere);
+  max-height: 600px;
+  border: 5px solid var(--vertBaniere);
+  border-radius: 25%;
   box-shadow: inset 0 0 0 2px var(--vertBaniere);
 }
 
-.texteQuiSuisJe {
+.texteQuiSuisJeGauche, .texteQuiSuisJeDroite {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
 
-.texteQuiSuisJe p {
-  font-family: var(--font-family);
+.texteQuiSuisJeGauche {
+  padding-right: 35px;
+}
+
+.texteQuiSuisJeDroite {
+  padding-left: 50px;
 }
 
 .texteGrasFonce {
-  color:var(--vertBaniere);
   font-weight: bold;
+  font-size: 30px;
 }
 
 .texteQuiSuisJeColle {
   display: flex;
   flex-direction: column;
 }
- 
+
+#gauche, #droite {
+  text-align: center;
+}
+
+
 /* FOOTER */
 .trait {
   height: 2px;
