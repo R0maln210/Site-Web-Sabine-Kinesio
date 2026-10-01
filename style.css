@@ -170,6 +170,16 @@ body {
   text-align: center;
 }
 
+/*SECTION POUR LES CURIEUX*/
+
+.titrePourLesCurieux {
+  display: flex;
+  padding-top: 100px;
+  font-family: var(--font-family);
+  color: var(--vertBaniere);
+  font-size: 60px;
+  justify-content: center;
+}
 
 /* FOOTER */
 .trait {
