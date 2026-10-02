@@ -276,24 +276,21 @@ body {
 
 
 /* FOOTER */
-.trait {
-  height: 2px;
-  background-color: var(--vert);
-}
- 
+
 .footer {
   display: flex;
   flex-direction: column;
   padding: 20px;
   padding-top: 40px;
+  background-color: var(--vertBaniere);
 }
  
 .navFooter {
   display: flex;
   justify-content: center;
-  align-items: flex-start;
   font-size: 18px;
-  gap: 100px;
+  gap: 15rem;
+  color: #fff;
 }
  
 .navFooter p {
@@ -301,11 +298,11 @@ body {
   font-family: var(--font-family);
   padding-top: 15px;
 }
- 
-.footerColonneCabinet {
-  text-align: right;
+
+.footerColoneContact {
+  text-align: center;
 }
- 
+
 .footerColonneReseau a {
   display: flex;
   margin-top: 10px;
