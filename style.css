@@ -68,7 +68,7 @@ body {
 
 .btn-rdv {
   background-color: #fff;
-  border: 5px solid var(--vert);
+  border: 5px solid var(--vertBaniere);
   border-radius: 12px;
   font-size: clamp(1rem, 1.1vw, 1.2rem);
   color: var(--vert);
@@ -79,8 +79,8 @@ body {
  
 .btn:hover {
   background-color: #fff;
-  border: 1px solid var(--vert);
-  box-shadow: 0 0 15px rgba(51, 91, 43, 0.3);
+  border: 1px solid var(--vertBaniere);
+  box-shadow: 0 0 15px var(--vertBaniere);
   color: var(--vertBaniere);
   border-radius: 12px;
 }
