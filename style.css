@@ -3,6 +3,8 @@
   --vertBaniere: #00674F;
   --vert-light: rgba(51, 91, 43, 0.15);
   --font-family: Georgia, serif;
+  --menu-bg: rgba(255, 255, 255, 0.75); 
+  --accent: #2563eb;
 }
  
 * {
@@ -19,6 +21,73 @@ body {
   font-family: var(--font-family);
 }
  
+/* TEST POUR UN MENU DANS LE HEADER */
+
+.menu {
+  background: var(--menu-bg);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  display: flex;
+  gap: 14px;
+  padding: 14px 20px;
+  border-radius: 24px;
+  justify-content: center;
+}
+
+.link {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 18px;
+  border-radius: 18px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background 0.25s, color 0.25s;
+}
+
+.link svg.filled {
+  fill: currentColor;
+  stroke: none;
+}
+
+.link svg {
+  filter: brightness(0) saturate(100%) invert(38%) sepia(29%) saturate(1097%) hue-rotate(96deg) brightness(93%) contrast(89%);
+  width: 30px;
+  height: 30px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.link-title {
+  max-width: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  opacity: 0;
+  transform: translateX(-8px);
+  transition: max-width 0.3s, opacity 0.3s, transform 0.3s;
+}
+
+.link:hover, .link:focus-visible {
+  background: #00674F;
+  color: #fff;
+  box-shadow: 0 1px 6px #00674F;
+  outline: none;
+}
+
+.link:hover .link-title, .link:focus-visible .link-title {
+  max-width: 120px;
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.link:hover svg,
+.link:focus-visible svg {
+  filter: brightness(0) invert(1);
+}
+
 /* HEADER & NAV */
 .main-header {
   width: 100%;
