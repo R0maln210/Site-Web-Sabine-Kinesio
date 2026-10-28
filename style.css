@@ -81,12 +81,12 @@ body {
 
 /* TITRES*/
 
-.titreAProposDeMoi, .titreOuSuisJe, .titreAcces, .titrePourLesCurieux, .titreThemeSeance, .titreIdeesRecues {
+.titreAProposDeMoi, .titreOuSuisJe, .titreAcces, .titrePourLesCurieux, .titreThemeSeance, .titreIdeesRecues, .titreDoncCestQuoi, .titreActuDuCabinet, .titrePenseeDuMoment, .titreParceQueLeurAvisCompte {
   display: flex;
-  padding-top: 50px;
+  padding-top: 125px;
   font-family: var(--font-family);
   color: var(--vertBaniere);
-  font-size: 60px;
+  font-size: 80px;
   justify-content: center;
 }
 
@@ -278,7 +278,214 @@ body {
 
 /* SECTION THÈMES SÉANCES */
 
+.ideesRecues {
+  color: var(--vertBaniere);
+  font-size: 27px;
+  text-align: center;
+  margin-left: 200px;
+  margin-right: 200px;
+}
 
+.preTexteIdeesRecues {
+  font-size: 43px;
+  padding-top: 20px;
+  padding-bottom: 25px;
+  color: rgb(142, 12, 12);  
+}
+
+.miniTitreIdeesRecues {
+  font-size: 35px;
+  padding-bottom: 10px;
+  padding-top: 25px;
+}
+
+/* SECTION DONC C'EST QUOI */
+
+.rectanglesHaut, .rectanglesBas {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row;
+}
+
+.rectanglesHaut {
+  padding-top: 40px;
+}
+
+.rectangles {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  gap: 80px;
+}
+
+.rectangleTopLeft, .rectangleTopRight, .rectangleBottomLeft, .rectangleBottomRight {
+  position: relative;
+  width: 450px;
+  height: 350px;
+  perspective: 1000px;
+}
+
+.rectangleTopLeftAvant, .rectangleTopRightAvant, .rectangleBottomLeftAvant, .rectangleBottomRightAvant,
+.rectangleTopLeftArriere, .rectangleTopRightArriere, .rectangleBottomLeftArriere, .rectangleBottomRightArriere {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 30px;
+  box-sizing: border-box;
+  text-align: center;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  transition: transform 0.7s cubic-bezier(0.4, 0.2, 0.2, 1);
+}
+
+.rectangleTopLeftAvant, .rectangleTopRightAvant, .rectangleBottomLeftAvant, .rectangleBottomRightAvant {
+  background-color: var(--vertBaniere);
+}
+
+.rectangleTopLeftArriere, .rectangleTopRightArriere, .rectangleBottomLeftArriere, .rectangleBottomRightArriere {
+  transform: rotateY(180deg);
+}
+
+.rectangleTopLeftArriere, .rectangleTopRightArriere, .rectangleBottomLeftArriere, .rectangleBottomRightArriere {
+  background-color: var(--vert-light);
+}
+
+.rectangleTopLeft:hover .rectangleTopLeftAvant,
+.rectangleTopRight:hover .rectangleTopRightAvant,
+.rectangleBottomLeft:hover .rectangleBottomLeftAvant,
+.rectangleBottomRight:hover .rectangleBottomRightAvant {
+  transform: rotateY(-180deg);
+}
+
+.rectangleTopLeft:hover .rectangleTopLeftArriere,
+.rectangleTopRight:hover .rectangleTopRightArriere,
+.rectangleBottomLeft:hover .rectangleBottomLeftArriere,
+.rectangleBottomRight:hover .rectangleBottomRightArriere {
+  transform: rotateY(0deg);
+}
+
+.miniTitreDoncCestQuoi {
+  margin: 0;
+  color: #f5f5f5;
+  font-size: 40px;
+}
+
+.texteRectangleDoncCestQuoi {
+  margin: 0;
+  font-size: 20px;
+  line-height: 1.5;
+  color: #000;
+}
+
+/* SECTION ACTU DU CABINET */
+
+.actuDuCabinet {
+  font-size: 30px;
+  padding-top: 50px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+
+.texteActuDuCabinet {
+  color: var(--vertBaniere);
+}
+
+/* SECTION PENSÉE DU MOMENT */
+
+
+.penseeDuMoment {
+  display: flex;
+  flex-direction: column;
+  gap: 35px;
+  font-size: 40px;
+  padding-top: 50px;
+}
+
+.textePenseeDuMoment, .listePenseeDuMoment {
+  color: var(--vertBaniere);
+  align-self: center;
+}
+
+.listePenseeDuMoment {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+/* SECTION PARCE QUE LEUR AVIS COMPTE */
+
+.boutonsPrenomParceQueLeurAvisCompte {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  gap: 50px;
+  padding-top: 50px;
+  padding-bottom: 30px;
+  flex-wrap: wrap;
+}
+
+.boutonsPrenomParceQueLeurAvisCompte button {
+  background-color: #fbeee0;
+  border: 2px solid #422800;
+  border-radius: 30px;
+  box-shadow: #422800 4px 4px 0 0;
+  color: #422800;
+  cursor: pointer;
+  display: inline-block;
+  font-weight: 600;
+  font-size: 18px;
+  padding: 0 18px;
+  line-height: 50px;
+  text-align: center;
+  text-decoration: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.texteAvis {
+  position: relative;
+  height: 320px;
+  text-align: center;
+  background-color: var(--vertBaniere);
+}
+
+.texteEtiquettePrenom {
+  color: #f5f5f5;
+  font-size: 30px;
+  position: absolute;
+  inset: 0;
+  padding: 30px 40px;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+  pointer-events: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.miniTitreEtiquettePrenom {
+  transition: background-color 0.3s ease, color 0.3s ease;
+  cursor: pointer;
+}
+
+.miniTitreEtiquettePrenom.actif {
+  background-color: var(--vertBaniere);
+  color: #f5f5f5;
+}
+
+.texteEtiquettePrenom.actif {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+/* SECTION VOUS AIMEREZ PEUT ÊTRE AUSSI */
 
 /* FOOTER */
 .trait {
