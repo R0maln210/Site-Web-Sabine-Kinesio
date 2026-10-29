@@ -5,6 +5,9 @@
   --font-family: Georgia, serif;
   --menu-bg: rgba(255, 255, 255, 0.75); 
   --accent: #2563eb;
+  --font-size-title: 40px;
+  --font-size-paragraph: 20px;
+  --font-size-subtitle: 30px;
 }
  
 * {
@@ -20,25 +23,39 @@ html {
 body {
   font-family: var(--font-family);
 }
+
+ {
+  padding: 20px;
+}
  
-/* TEST POUR UN MENU DANS LE HEADER */
+/* HEADER */
+
+.main-header {
+  width: 100%;
+  padding-top: 0px;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0px;
+  background-color: #f5f5f5;
+  z-index: 1000;
+}
 
 .menu {
   background: var(--menu-bg);
   backdrop-filter: blur(12px);
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
   display: flex;
-  gap: 14px;
-  padding: 14px 20px;
-  border-radius: 24px;
   justify-content: center;
+  gap: 14px;
+  padding: 0px 20px;
+  border-radius: 24px;
 }
 
 .link {
   display: flex;
   align-items: center;
   gap: 12px;
-  padding: 14px 18px;
+  padding: 18px 18px;
   border-radius: 18px;
   text-decoration: none;
   font-weight: 600;
@@ -78,7 +95,7 @@ body {
 }
 
 .link:hover .link-title, .link:focus-visible .link-title {
-  max-width: 120px;
+  max-width: 236px;
   opacity: 1;
   transform: translateX(0);
 }
@@ -87,67 +104,32 @@ body {
 .link:focus-visible svg {
   filter: brightness(0) invert(1);
 }
-
-/* HEADER & NAV */
-.main-header {
-  width: 100%;
-  padding-top: 1rem;
-}
  
-.nav-line {
-  display: grid;
-  grid-template-columns: 1fr auto 1fr; 
-  align-items: center; 
-  max-width: 1700px;
-  margin: 0 auto;
-  padding: 0 1rem;
-}
- 
-.nav-group {
+.logo {
   display: flex;
-  align-items: center;
-  justify-content: space-evenly;
-  gap: 0.5rem;
+  flex-direction: column;
+  height: 117px;
+  flex-shrink: 0;
+  transform: translateY(-15px);
 }
- 
-.btn {
-  background: transparent;
-  border: 1px solid transparent;
-  font-family: var(--font-family);
-  color: #000;
-  font-size: 1rem;
-  font-weight: 500;
-  cursor: pointer;
-  padding: 8px 12px;
-  white-space: nowrap;
-  transition: all 0.2s ease;
-  text-decoration: none;
+
+.logo > * {
+  flex-shrink: 0;
 }
- 
-.btn:hover {
-  background-color: var(--vert-light);
-  border: 1px solid var(--vert);
-  box-shadow: 0 0 15px rgba(51, 91, 43, 0.3);
-}
- 
+
 .buddha-center {
-  padding: 0 1.5rem;
+  padding-left: 10px;
+  margin-bottom: -10rem;
 }
  
 .buddha-center img {
-  width: 180px;
+  width: 100px;
   height: auto;
-  display: block;
   cursor: pointer;
 }
- 
-.brand-text {
-  text-align: center;
-  margin-top: -17rem;
-}
- 
+
 .brand-text img {
-  width: 220px;
+  width: 122px;
   height: auto;
 }
  
@@ -160,7 +142,7 @@ body {
   padding-top: 125px;
   font-family: var(--font-family);
   color: var(--vertBaniere);
-  font-size: 80px;
+  font-size: var(--font-size-title);
   justify-content: center;
 }
 
@@ -195,7 +177,7 @@ body {
 }
  
 .info p {
-  font-size: 16px;
+  font-size: var(--font-size-paragraph);
   line-height: 1.6;
   margin: 15px 0;
 }
@@ -207,12 +189,12 @@ body {
   gap: 25px;
   padding-top: 50px;
   color: var(--vertBaniere);
-  font-size: 23px;
+  font-size: var(--font-size-paragraph);
 }
 
 .photoSabine {
-  max-width: 600px;
-  max-height: 600px;
+  max-width: 450px;
+  max-height: 450px;
   border: 5px solid var(--vertBaniere);
   border-radius: 50%;
   box-shadow: inset 0 0 0 2px var(--vertBaniere);
@@ -234,7 +216,7 @@ body {
 
 .texteGrasFonce {
   font-weight: bold;
-  font-size: 30px;
+  font-size: var(--font-size-paragraph);
 }
 
 .texteAProposDeMoiColle {
@@ -250,27 +232,28 @@ body {
 
 .ouSuisJe {
   display: flex;
-  gap: 25px;
+  gap: 100px;
   padding-top: 50px;
+  padding: 50px;
   color: var(--vertBaniere);
-  font-size: 23px;
+  font-size: var(--font-size-paragraph);
 }
 
 .photoBureau {
-  max-width: 600px;
-  max-height: 600px;
+  max-width: 550px;
+  max-height: 550px;
   border-radius: 15%;
 }
 
 .texteOuSuisJeGauche {
   padding-top: 15px;
-  font-size: 35px;
+  font-size: var(--font-size-paragraph);
   display: flex;
   justify-content: center;
 }
 
 .ouSuisJeDroite {
-  font-size: 35px;
+  font-size: var(--font-size-paragraph);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -287,10 +270,44 @@ body {
   padding-top: 2rem;
   display: flex;
   justify-content: center;
+  gap: 75px;
 }
 
 .photoPlan {
-  max-width: 900px;
+  max-width: 700px;
+}
+
+.accesLien {
+  display: flex;
+  gap: 50px;
+  flex-direction: column;
+  justify-content: center;
+  height: 465px;
+}
+
+.linkAcces {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 20px;
+  border-radius: 18px;
+  background: #f5f5f5;
+  color: #333;
+  text-decoration: none;
+  font-weight: 600;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.linkAcces svg {
+  width: 60px;
+  height: 60px;
+  flex-shrink: 0;
+}
+
+.linkAcces-titre {
+  flex: 1;
+  text-align: center;
 }
 
 /* SECTION POUR LES CURIEUX */
@@ -302,7 +319,7 @@ body {
   gap: 60px;
   padding-top: 45px;
   color: var(--vertBaniere);
-  font-size: 20px;
+  font-size: var(--font-size-paragraph);
 }
 
 .poseYogaRouge, .poseYogaJaune, .poseYogaVert {
@@ -345,7 +362,7 @@ body {
 }
 
 .miniTitrePourLesCurieuxGauche, .miniTitrePourLesCurieuxMilieu, .miniTitrePourLesCurieuxDroite {
-  font-size:28px;
+  font-size: var(--font-size-subtitle);
   font-weight: bold;
   margin-bottom: 15px;
 }
@@ -354,21 +371,21 @@ body {
 
 .ideesRecues {
   color: var(--vertBaniere);
-  font-size: 27px;
+  font-size: var(--font-size-paragraph);
   text-align: center;
   margin-left: 200px;
   margin-right: 200px;
 }
 
 .preTexteIdeesRecues {
-  font-size: 43px;
+  font-size: var(--font-size-paragraph);
   padding-top: 20px;
   padding-bottom: 25px;
   color: rgb(142, 12, 12);  
 }
 
 .miniTitreIdeesRecues {
-  font-size: 35px;
+  font-size: var(--font-size-subtitle);
   padding-bottom: 10px;
   padding-top: 25px;
 }
@@ -379,6 +396,7 @@ body {
   display: flex;
   justify-content: space-around;
   flex-direction: row;
+  pointer-events: auto;
 }
 
 .rectanglesHaut {
@@ -443,12 +461,12 @@ body {
 .miniTitreDoncCestQuoi {
   margin: 0;
   color: #f5f5f5;
-  font-size: 40px;
+  font-size: var(--font-size-subtitle);
 }
 
 .texteRectangleDoncCestQuoi {
   margin: 0;
-  font-size: 20px;
+  font-size: var(--font-size-paragraph);
   line-height: 1.5;
   color: #000;
 }
@@ -456,7 +474,7 @@ body {
 /* SECTION ACTU DU CABINET */
 
 .actuDuCabinet {
-  font-size: 30px;
+  font-size: var(--font-size-paragraph);
   padding-top: 50px;
   text-align: center;
   display: flex;
@@ -475,7 +493,7 @@ body {
   display: flex;
   flex-direction: column;
   gap: 35px;
-  font-size: 40px;
+  font-size: var(--font-size-subtitle);
   padding-top: 50px;
 }
 
@@ -570,13 +588,13 @@ body {
 
 .lienTherapeuteVousAimerezPeutEtreAussi {
   text-decoration: none;
-  font-size: 30px;
+  font-size: var(--font-size-paragraph);
   color: var(--vertBaniere);
   text-align: center;
 }
 
 .texteVousAimerezPeutEtreAussi {
-  font-size: 35px;
+  font-size: var(--font-size-subtitle);
   padding-top: 50px;
   color: var(--vertBaniere);
 }
@@ -598,12 +616,11 @@ body {
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  font-size: 18px;
   gap: 100px;
 }
  
 .navFooter p {
-  font-size: 15px;
+  font-size: var(--font-size-paragraph);
   font-family: var(--font-family);
   padding-top: 15px;
 }
@@ -629,7 +646,7 @@ body {
 .copyright {
   text-align: center;
   margin-top: 30px;
-  font-size: 14px;
+  font-size: font-size: var(--font-size-paragraph);;
   color: #666;
 }
  
