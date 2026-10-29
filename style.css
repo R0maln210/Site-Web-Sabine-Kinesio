@@ -3,6 +3,10 @@
   --vertBaniere: #00674F;
   --vert-light: rgba(51, 91, 43, 0.15);
   --font-family: Georgia, serif;
+  --menu-bg: rgba(255, 255, 255, 0.75); 
+  --accent: #2563eb;
+  --font-size-title: 40px;
+  --font-size-paragraph: 12px;
 }
  
 * {
@@ -10,70 +14,111 @@
   margin: 0;
   padding: 0;
 }
- 
+
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: var(--font-family);
-  background-color: rgb(241, 241, 233);
 }
  
-/* HEADER & NAV */
+/* HEADER */
+
 .main-header {
   width: 100%;
-  padding-top: 1rem;
+  padding-top: 0px;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0px;
+  background-color: #f5f5f5;
 }
- 
-.nav-line {
-  display: grid;
-  grid-template-columns: 1fr auto 1fr; 
-  align-items: center; 
-  max-width: 1700px;
-  margin: 0 auto;
-  padding: 0 1rem;
+
+.menu {
+  background: var(--menu-bg);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+  padding: 0px 20px;
+  border-radius: 24px;
+  z-index: 1;
 }
- 
-.nav-group {
+
+.link {
   display: flex;
   align-items: center;
-  justify-content: space-evenly;
-  gap: 0.5rem;
+  gap: 12px;
+  padding: 14px 18px;
+  border-radius: 18px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background 0.25s, color 0.25s;
 }
- 
-.btn {
-  background: transparent;
-  border: 1px solid transparent;
-  font-family: var(--font-family);
-  font-size: 1rem;
-  font-weight: 500;
-  cursor: pointer;
-  padding: 8px 12px;
+
+.link svg.filled {
+  fill: currentColor;
+  stroke: none;
+}
+
+.link svg {
+  filter: brightness(0) saturate(100%) invert(38%) sepia(29%) saturate(1097%) hue-rotate(96deg) brightness(93%) contrast(89%);
+  width: 30px;
+  height: 30px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.link-title {
+  max-width: 0;
+  overflow: hidden;
   white-space: nowrap;
-  transition: all 0.2s ease;
+  opacity: 0;
+  transform: translateX(-8px);
+  transition: max-width 0.3s, opacity 0.3s, transform 0.3s;
+}
+
+.link:hover, .link:focus-visible {
+  background: #00674F;
+  color: #fff;
+  box-shadow: 0 1px 6px #00674F;
+  outline: none;
+}
+
+.link:hover .link-title, .link:focus-visible .link-title {
+  max-width: 236px;
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.link:hover svg,
+.link:focus-visible svg {
+  filter: brightness(0) invert(1);
 }
  
-.btn:hover {
-  background-color: var(--vert-light);
-  border: 1px solid var(--vert);
-  box-shadow: 0 0 15px rgba(51, 91, 43, 0.3);
+.logo {
+  display: flex;
+  flex-direction: column;
+  gap: -100px;
 }
- 
+
 .buddha-center {
-  padding: 0 1.5rem;
+  padding-left: 10px;
+  margin-bottom: -10rem;
 }
  
 .buddha-center img {
-  width: 180px;
+  width: 100px;
   height: auto;
-  display: block;
   cursor: pointer;
 }
- 
-.brand-text {
-  text-align: center;
-  margin-top: -17rem;
-}
- 
+
 .brand-text img {
-  width: 220px;
+  width: 122px;
   height: auto;
 }
  
@@ -81,7 +126,7 @@ body {
 
 /* TITRES*/
 
-.titreAProposDeMoi, .titreOuSuisJe, .titreAcces, .titrePourLesCurieux, .titreThemeSeance, .titreIdeesRecues, .titreDoncCestQuoi, .titreActuDuCabinet, .titrePenseeDuMoment, .titreParceQueLeurAvisCompte {
+.titreAProposDeMoi, .titreOuSuisJe, .titreAcces, .titrePourLesCurieux, .titreThemeSeance, .titreIdeesRecues, .titreDoncCestQuoi, .titreActuDuCabinet, .titrePenseeDuMoment, .titreParceQueLeurAvisCompte, .titreVousAimerezPeutEtreAussi {
   display: flex;
   padding-top: 125px;
   font-family: var(--font-family);
@@ -140,7 +185,7 @@ body {
   max-width: 600px;
   max-height: 600px;
   border: 5px solid var(--vertBaniere);
-  border-radius: 25%;
+  border-radius: 50%;
   box-shadow: inset 0 0 0 2px var(--vertBaniere);
 }
 
@@ -305,6 +350,7 @@ body {
   display: flex;
   justify-content: space-around;
   flex-direction: row;
+  z-index: -1;
 }
 
 .rectanglesHaut {
@@ -422,17 +468,37 @@ body {
   display: flex;
   justify-content: center;
   flex-direction: row;
-  gap: 150px;
+  gap: 50px;
   padding-top: 50px;
   padding-bottom: 30px;
   flex-wrap: wrap;
 }
 
+.boutonsPrenomParceQueLeurAvisCompte button {
+  background-color: #fbeee0;
+  border: 2px solid #422800;
+  border-radius: 30px;
+  box-shadow: #422800 4px 4px 0 0;
+  color: #422800;
+  cursor: pointer;
+  display: inline-block;
+  font-weight: 600;
+  font-size: 18px;
+  padding: 0 18px;
+  line-height: 50px;
+  text-align: center;
+  text-decoration: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
 .texteAvis {
   position: relative;
-  height: 350px;
-  background-color: var(--vertBaniere);
+  height: 320px;
   text-align: center;
+  background-color: var(--vertBaniere);
+  z-index: -1;
 }
 
 .texteEtiquettePrenom {
@@ -464,6 +530,28 @@ body {
   opacity: 1;
   transform: translateY(0);
   pointer-events: auto;
+}
+
+/* SECTION VOUS AIMEREZ PEUT ÊTRE AUSSI */
+
+.vousAimerezPeutEtreAussi {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 25px;
+}
+
+.lienTherapeuteVousAimerezPeutEtreAussi {
+  text-decoration: none;
+  font-size: 30px;
+  color: var(--vertBaniere);
+  text-align: center;
+}
+
+.texteVousAimerezPeutEtreAussi {
+  font-size: 35px;
+  padding-top: 50px;
+  color: var(--vertBaniere);
 }
 
 /* FOOTER */
