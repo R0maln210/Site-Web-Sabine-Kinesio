@@ -20,7 +20,7 @@ boutonsDoncCestQuoi[0].click();
 // PARTIE PENSÉE DU MOMENT
 
 let citationsList = [];
-let currentIndex = 0;
+let currentIndex = 1;
 
 // Fonction pour afficher une citation selon son index dans le tableau
 function afficherCitation(index) {
@@ -39,6 +39,10 @@ function afficherCitation(index) {
     if (citation.author && citation.author.trim() !== '') {
         htmlContent += `<p class="textePenseeDuMoment"><em>— ${citation.author}</em></p>`;
     }
+    // Ajoute le commentaire si présent
+    if (citation.comment && citation.comment.trim() !== '') {
+        htmlContent += `<p class="commentairePenseeDuMoment">${citation.comment.trim()}</p>`;
+    }
 
     bloc.innerHTML = htmlContent;
 }
@@ -53,11 +57,11 @@ fetch('citations.json')
             // Affichage immédiat de la première citation (index 0)
             afficherCitation(currentIndex);
 
-            // Changement de citation toutes les 10 secondes (10000 ms)
+            // Changement de citation toutes les semaines (604800000 ms)
             setInterval(() => {
                 currentIndex = (currentIndex + 1) % citationsList.length; // Boucle de 0 à la fin
                 afficherCitation(currentIndex);
-            }, 10000);
+            }, 604800000);
         }
     })
     .catch(err => console.error("Erreur chargement citations.json :", err));
