@@ -308,59 +308,91 @@ body {
 
 /* SECTION POUR LES CURIEUX */
 
-.pourLesCurieux { 
+.pourLesCurieux {
+  --curieux-vert: #00694f;
+  --curieux-texte: #1f4d40;
   display: flex;
-  justify-content: space-between;
-  flex-direction: row;
-  gap: 60px;
-  padding-top: 45px;
-  color: var(--vertBaniere);
-  font-size: var(--font-size-paragraph);
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: stretch;
+  gap: 1.5rem;
+  margin: 1em auto;
+  padding: 0 1rem;
 }
 
-.poseYogaRouge, .poseYogaJaune, .poseYogaVert {
-  max-width: 400px;
-  max-height: 400px;
+.pourLesCurieux .carte {
+  flex: 1 1 280px;
+  max-width: 340px;
+  background: #fff;
+  border: 1px solid rgba(0, 105, 79, .15);
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, .15);
+  overflow: hidden;
+}
+
+/* Image */
+.pourLesCurieux .figure {
+  margin: 0;
+  height: 320px;
+  padding: .75rem;
+  display: grid;
+  place-items: center;
 }
 
 .poseYogaRouge {
-  height: 65%;
-  width: 45%;
-  
+  max-width: 400px;
+  max-height: 300px;
 }
 
 .poseYogaJaune {
-  margin-top: -36px;
+  max-width: 500px;
+  max-height: 500px;
 }
 
 .poseYogaVert {
-  margin-top: -75px;
+transform: scale(1.2);
 }
 
-.pourLesCurieuxGauche, .pourLesCurieuxMilieu, .pourLesCurieuxDroite {
-  display: flex;
-  justify-content: flex-start;
-  flex-direction: column;
-  align-items: center;
+.poseYogaJaune {
+  margin-top: -3rem;
+}
+
+.poseYogaVert {
+  margin-top: -3rem;
+}
+
+.pourLesCurieux .figure img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+  transition: transform .5s;
+}
+@media (hover: hover) and (pointer: fine) {
+  .pourLesCurieux .figure img:hover { transform: scale(1.06); }
+}
+
+.pourLesCurieux .figure-jaune { background: radial-gradient(closest-side, #fff6d0, #f1d77a); }
+.pourLesCurieux .figure-rouge { background: radial-gradient(closest-side, #ffe1dc, #f0a79e); }
+.pourLesCurieux .figure-vert  { background: radial-gradient(closest-side, #eef7d6, #b9d57c); }
+
+/* Texte */
+.pourLesCurieux .content {
+  padding: 1rem 1.4rem 1.4rem;
   text-align: center;
 }
-
-.divTextePourLesCurieuxGauche {
-  margin-top: 20px;
+.pourLesCurieux h3 {
+  margin: 0 0 .75rem;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+  color: var(--curieux-vert);
 }
-
-.divTextePourLesCurieuxMilieu {
-  margin-top: -50px;
-}
-
-.divTextePourLesCurieuxDroite {
-  margin-top: -10px;
-}
-
-.miniTitrePourLesCurieuxGauche, .miniTitrePourLesCurieuxMilieu, .miniTitrePourLesCurieuxDroite {
-  font-size: var(--font-size-subtitle);
-  font-weight: bold;
-  margin-bottom: 15px;
+.pourLesCurieux .content p {
+  margin: 0 0 .6rem;
+  line-height: 1.35;
+  color: var(--curieux-texte);
 }
 
 /* SECTION THÈMES SÉANCES */
@@ -568,6 +600,8 @@ body {
   gap: 35px;
   font-size: var(--font-size-subtitle);
   padding-top: 50px;
+  text-align: center;
+  margin: 0px 150px;
 }
 
 .textePenseeDuMoment, .listePenseeDuMoment {
