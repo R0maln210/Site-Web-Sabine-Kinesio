@@ -133,7 +133,7 @@ body {
 
 /* TITRES*/
 
-.titreAProposDeMoi, .titreOuSuisJe, .titreAcces, .titrePourLesCurieux, .titreThemeSeance, .titreIdeesRecues, .titreDoncCestQuoi, .titreActuDuCabinet, .titrePenseeDuMoment, .titreParceQueLeurAvisCompte, .titreVousAimerezPeutEtreAussi {
+.titrePrestationsEtTarifs, .titreAProposDeMoi, .titreOuSuisJe, .titreAcces, .titrePourLesCurieux, .titreThemeSeance, .titreIdeesRecues, .titreDoncCestQuoi, .titreActuDuCabinet, .titrePenseeDuMoment, .titreParceQueLeurAvisCompte, .titreVousAimerezPeutEtreAussi {
   display: flex;
   padding-top: 125px;
   font-family: var(--font-family);
@@ -142,40 +142,35 @@ body {
   justify-content: center;
 }
 
-/*SECTION PRESENTATION ET TARIFS*/
+.titrePrestationsEtTarifs {
+  padding-top: 0px;
+}
+
 .main-content {
   max-width: 1400px;
   margin: 3rem auto 2rem;
   padding: 0 2rem;
 }
- 
-.infos {
+
+/*SECTION PRESENTATION ET TARIFS*/
+
+.informations {
   display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  width: 100%;
-  gap: 40px;
-}
- 
-.info {
-  flex: 1;
-  text-align: center;
-}
- 
-.info img {
-  width: 160px;
-  height: auto;
-  margin-bottom: 10px;
-}
- 
-.info h2 {
-  margin: 0 0 15px;
-}
- 
-.info p {
+  justify-content: space-around;
+  flex-direction: row;
+  gap: 25px;
+  color: var(--vertBaniere);
   font-size: var(--font-size-paragraph);
-  line-height: 1.6;
-  margin: 15px 0;
+}
+
+.seancePrestationsEtTarifs, .remboursementPrestationsEtTarifs {
+  padding-top: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  gap: 30px;
 }
 
 /*SECTION A PROPOS DE MOI*/
@@ -486,83 +481,68 @@ body {
 
 /* SECTION DONC C'EST QUOI */
 
-.rectanglesHaut, .rectanglesBas {
-  display: flex;
-  justify-content: space-around;
-  flex-direction: row;
-  pointer-events: auto;
-}
-
-.rectanglesHaut {
-  padding-top: 40px;
-}
-
-.rectangles {
-  display: flex;
-  justify-content: space-between;
-  flex-direction: column;
-  gap: 80px;
-}
-
-.rectangleTopLeft, .rectangleTopRight, .rectangleBottomLeft, .rectangleBottomRight {
-  position: relative;
-  width: 450px;
-  height: 350px;
-  perspective: 1000px;
-}
-
-.rectangleTopLeftAvant, .rectangleTopRightAvant, .rectangleBottomLeftAvant, .rectangleBottomRightAvant,
-.rectangleTopLeftArriere, .rectangleTopRightArriere, .rectangleBottomLeftArriere, .rectangleBottomRightArriere {
-  position: absolute;
-  inset: 0;
-  display: flex;
+.texteDoncCestQuoi {
+  display: grid;
   align-items: center;
-  justify-content: center;
-  padding: 30px;
-  box-sizing: border-box;
-  text-align: center;
-  backface-visibility: hidden;
-  -webkit-backface-visibility: hidden;
-  transition: transform 0.7s cubic-bezier(0.4, 0.2, 0.2, 1);
-}
-
-.rectangleTopLeftAvant, .rectangleTopRightAvant, .rectangleBottomLeftAvant, .rectangleBottomRightAvant {
-  background-color: var(--vertBaniere);
-}
-
-.rectangleTopLeftArriere, .rectangleTopRightArriere, .rectangleBottomLeftArriere, .rectangleBottomRightArriere {
-  transform: rotateY(180deg);
-}
-
-.rectangleTopLeftArriere, .rectangleTopRightArriere, .rectangleBottomLeftArriere, .rectangleBottomRightArriere {
-  background-color: var(--vert-light);
-}
-
-.rectangleTopLeft:hover .rectangleTopLeftAvant,
-.rectangleTopRight:hover .rectangleTopRightAvant,
-.rectangleBottomLeft:hover .rectangleBottomLeftAvant,
-.rectangleBottomRight:hover .rectangleBottomRightAvant {
-  transform: rotateY(-180deg);
-}
-
-.rectangleTopLeft:hover .rectangleTopLeftArriere,
-.rectangleTopRight:hover .rectangleTopRightArriere,
-.rectangleBottomLeft:hover .rectangleBottomLeftArriere,
-.rectangleBottomRight:hover .rectangleBottomRightArriere {
-  transform: rotateY(0deg);
-}
-
-.miniTitreDoncCestQuoi {
-  margin: 0;
-  color: #f5f5f5;
-  font-size: var(--font-size-subtitle);
-}
-
-.texteRectangleDoncCestQuoi {
-  margin: 0;
-  font-size: var(--font-size-paragraph);
+  height: 200px;
+  margin: 50px 350px;
+  align-content: center;
+  color: var(--vertBaniere);
   line-height: 1.5;
-  color: #000;
+}
+
+.texteFlecheDoncCestQuoi {
+  grid-area: 1 / 1;
+  text-align: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.6s ease, visibility 0.6s ease;
+  font-size: var(--font-size-paragraph);
+}
+
+.texteFlecheDoncCestQuoi.actif {
+  opacity: 1;
+  visibility: visible;
+  transition-delay: 0.2s;
+}
+
+.flechesDoncCestQuoi {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 80px;
+}
+
+.fleche {
+  position: relative;
+  isolation: isolate;
+  border: none;
+  width: 275px;
+  height: 100px;
+  background: var(--vertBaniere);
+  color: #f5f5f5;
+  cursor: pointer;
+  font-size: var(--font-size-paragraph);
+  clip-path: polygon(0 0, calc(100% - 30px) 0, 100% 50%, calc(100% - 30px) 100%, 0 100%, 30px 50%);
+}
+
+.fleche.actif {
+  color: var(--vertBaniere);
+  font-size: var(--font-size-paragraph);
+}
+
+.fleche::before {
+  content: "";
+  position: absolute;
+  inset: 5px 3px;
+  background: var(--couleur);
+  clip-path: polygon(4px 0, calc(100% - 29px) 0, calc(100% - 3px) 50%, calc(100% - 29px) 100%, 4px 100%, 33px 50%);
+  z-index: -1;
+  transition: background-color 0.4s ease;
+}
+
+.fleche.actif::before {
+  background: #f5f5f5;
 }
 
 /* SECTION ACTU DU CABINET */
@@ -581,7 +561,6 @@ body {
 }
 
 /* SECTION PENSÉE DU MOMENT */
-
 
 .penseeDuMoment {
   display: flex;
@@ -740,7 +719,7 @@ body {
 .copyright {
   text-align: center;
   margin-top: 30px;
-  font-size: font-size: var(--font-size-paragraph);
+  font-size: var(--font-size-paragraph);
   color: #666;
 }
  
