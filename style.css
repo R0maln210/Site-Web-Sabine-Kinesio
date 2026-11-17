@@ -133,7 +133,7 @@ body {
 
 /* TITRES*/
 
-.titrePrestationsEtTarifs, .titreAProposDeMoi, .titreOuSuisJe, .titreAcces, .titrePourLesCurieux, .titreThemeSeance, .titreIdeesRecues, .titreDoncCestQuoi, .titreActuDuCabinet, .titrePenseeDuMoment, .titreParceQueLeurAvisCompte, .titreVousAimerezPeutEtreAussi {
+.titrePrestationsEtTarifs, .titreTarifs, .titreAProposDeMoi, .titreOuSuisJe, .titreAcces, .titrePourLesCurieux, .titreThemeSeance, .titreIdeesRecues, .titreDoncCestQuoi, .titreActuDuCabinet, .titrePenseeDuMoment, .titreParceQueLeurAvisCompte, .titreVousAimerezPeutEtreAussi {
   display: flex;
   padding-top: 125px;
   font-family: var(--font-family);
@@ -171,6 +171,132 @@ body {
   flex-direction: column;
   text-align: center;
   gap: 30px;
+}
+
+/*SECTION TARIFS*/
+
+.tarifs {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.conteneurTarifsHaut {
+  display: flex;
+  justify-content: space-around;
+  gap: 2rem;
+  padding-top: 2.5rem;
+  color: var(--vertBaniere)
+}
+
+.seanceALaCarte {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  text-align: center;
+  width: 440px;
+  height: 200px;
+  border: 4px var(--vertBaniere) solid;
+  border-radius: 30px;
+}
+
+.packDeTroisSeances {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  text-align: center;
+  width: 440px;
+  height: 200px;
+  border: 4px var(--vertBaniere) solid;
+  border-radius: 30px;
+}
+
+.packDeCinqSeances {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  text-align: center;
+  width: 440px;
+  height: 200px;
+  border: 4px var(--vertBaniere) solid;
+  border-radius: 30px;
+}
+
+.miniTitreSeanceALaCarte, .miniTitrePackDeTroisSeances, .miniTitrePackDeCinqSeances, .miniTitrePackFamille {
+  font-size: var(--font-size-subtitle);
+}
+
+.miniTitreSeanceALaCarte {
+  margin-top: -0.7rem;
+}
+
+.texteSeanceALaCarte, .textePackDeTroisSeances, .textePackDeCinqSeances, .textePackFamille, .texteOffrir {
+  font-size: 25px;
+}
+
+.conteneurTarifsBas {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 8rem;
+  color: var(--vertBaniere);
+}
+
+.svgTarifsSvgCadeau {
+  color: var(--vertBaniere);
+  height: 250px;
+  width: 250px;  
+}
+
+.packFamille {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  text-align: center;
+  width: 300px;
+  height: 110px;
+  border: 4px var(--vertBaniere) solid;
+  border-radius: 40px;
+}
+
+.offir {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  text-align: center;
+  width: 400px;
+  height: 200px;
+  border: 4px var(--vertBaniere) solid;
+  border-radius: 30px;
+  margin-right: 5rem;
+}
+
+.offrirBas {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.offrirBasGauche {
+  margin-left: 5rem;
+  margin-top: -2rem;
+}
+
+.offrirBasDroit {
+  margin-top: -2rem;
+}
+
+.svgOffrirTelephone {
+  height: 50px;
+  width: 50px;
+  color: var(--vertBaniere);
+}
+
+.svgOffrirWhatsapp {
+  height: 50px;
+  width: 50px;
+  color: var(--vertBaniere);
 }
 
 /*SECTION A PROPOS DE MOI*/
