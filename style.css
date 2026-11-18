@@ -924,7 +924,7 @@ transform: scale(1.2);
  
 /* RESPONSIVE */
 
-/* 1. TABLETTES EN PAYSAGE ET PETITS PC PORTABLES (en dessous de 1200px) */
+/* 1. TABLETTES EN PAYSAGE ET PETITS PC PORTABLES */
 @media (max-width: 1200px) {
   :root {
     --font-size-title: 36px;
@@ -933,7 +933,7 @@ transform: scale(1.2);
   }
 
   html {
-    scroll-padding-top: 140px; /* le header sticky ne cache plus les titres au clic sur le menu */
+    scroll-padding-top: 140px;
   }
 
   img {
@@ -968,7 +968,7 @@ transform: scale(1.2);
   }
 
   :root {
-    --logo-w: 100px; /* largeur du logo : tout le reste s'adapte */
+    --logo-w: 100px;
   }
 
   .logo {
@@ -976,7 +976,7 @@ transform: scale(1.2);
     display: grid;
     justify-items: center;
     width: var(--logo-w);
-    height: calc(var(--logo-w) * 1.25); /* garde cercle + nom, coupe le vide du bas */
+    height: calc(var(--logo-w) * 1.25);
     overflow: hidden;
     transform: none;
     margin: 0 auto;
@@ -984,7 +984,7 @@ transform: scale(1.2);
 
   .buddha-center,
   .brand-text {
-    grid-area: 1 / 1; /* les deux images au même endroit */
+    grid-area: 1 / 1;
     margin: 0 !important;
     padding: 0 !important;
   }
@@ -1048,7 +1048,6 @@ transform: scale(1.2);
     color: #fff;
   }
 
-  /* TITRES : margin à la place du padding (sinon le header cache le titre au clic) */
   h2[class^="titre"] {
     padding-top: 0;
     margin-top: 90px;
@@ -1122,7 +1121,7 @@ transform: scale(1.2);
     font-size: 22px;
   }
 
-  /* À PROPOS DE MOI : photo en haut, les 2 textes dessous */
+  /* À PROPOS DE MOI*/
   .aProposDeMoi {
     flex-wrap: wrap;
     justify-content: center;
@@ -1209,7 +1208,7 @@ transform: scale(1.2);
 
   /* DONC C'EST QUOI */
   .texteDoncCestQuoi {
-    height: auto; /* la hauteur s'adapte au texte le plus long */
+    height: auto;
     min-height: 200px;
     margin: 50px 100px;
   }
@@ -1241,7 +1240,7 @@ transform: scale(1.2);
     margin: 0 60px;
   }
 
-  /* AVIS : les textes s'empilent dans la même case, la hauteur suit le plus long */
+  /* AVIS */
   .texteAvis {
     display: grid;
     height: auto;
@@ -1265,7 +1264,7 @@ transform: scale(1.2);
   }
 }
 
-/* 2. TABLETTES EN PORTRAIT (en dessous de 768px) */
+/* 2. TABLETTES EN PORTRAIT */
 @media (max-width: 768px) {
   :root {
     --font-size-title: 32px;
@@ -1298,7 +1297,7 @@ transform: scale(1.2);
     margin-top: 70px;
   }
 
-  /* PRESTATIONS : colonnes empilées */
+  /* PRESTATIONS */
   .informations {
     flex-direction: column;
     align-items: center;
@@ -1376,7 +1375,7 @@ transform: scale(1.2);
     margin-top: 0;
   }
 
-  /* À PROPOS DE MOI : tout en colonne */
+  /* À PROPOS DE MOI */
   .aProposDeMoi {
     flex-direction: column;
     flex-wrap: nowrap;
@@ -1420,7 +1419,7 @@ transform: scale(1.2);
     gap: 15px;
   }
 
-  /* THÈMES : logo en haut, puis 2 colonnes */
+  /* THÈMES */
   .themes-layout {
     grid-template-columns: 1fr 1fr;
     gap: 20px;
@@ -1495,7 +1494,7 @@ transform: scale(1.2);
     text-align: center;
   }
 
-  /* FOOTER : colonnes empilées et centrées */
+  /* FOOTER */
   .navFooter {
     flex-direction: column;
     align-items: center;
@@ -1524,7 +1523,7 @@ transform: scale(1.2);
   }
 }
 
-/* 3. SMARTPHONES (en dessous de 480px - couvre le 368px) */
+/* 3. SMARTPHONES */
 @media (max-width: 480px) {
   :root {
     --font-size-title: 28px;
@@ -1570,7 +1569,7 @@ transform: scale(1.2);
   }
 
   .link-title {
-    white-space: normal; /* "Parce que leur avis compte" passe sur 2 lignes si besoin */
+    white-space: normal;
   }
 
   h2[class^="titre"] {
@@ -1607,7 +1606,7 @@ transform: scale(1.2);
     max-width: 320px;
   }
 
-  /* THÈMES : une seule colonne */
+  /* THÈMES */
   .themes-layout {
     grid-template-columns: 1fr;
   }
@@ -1626,7 +1625,7 @@ transform: scale(1.2);
     margin-right: 0;
   }
 
-  /* DONC C'EST QUOI : flèches sur 2 lignes */
+  /* DONC C'EST QUOI */
   .flechesDoncCestQuoi {
     flex-wrap: wrap;
     gap: 10px;
