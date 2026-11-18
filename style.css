@@ -36,6 +36,41 @@ body {
   z-index: 1000;
 }
 
+.burger {
+  display:none;
+  position: absolute;
+  top: 28px;
+  left: 16px;
+  z-index: 1100;
+  width: 44px;
+  height: 44px;
+  padding: 10px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.burger span {
+  display: block;
+  height: 3px;
+  width: 100%;
+  background-color: var(--vertBaniere);
+  border-radius: 2px;
+  transition: transform 0.3s, opacity 0.3s;
+}
+
+.burger[aria-expanded="true"] span:nth-child(1) {
+  transform: translateY(12px) rotate(45deg);
+}
+.burger[aria-expanded="true"] span:nth-child(2) {
+  opacity: 0;
+}
+.burger[aria-expanded="true"] span:nth-child(3) {
+  transform: translateY(-12px) rotate(-45deg);
+}
+
 .menu {
   background: var(--menu-bg);
   backdrop-filter: blur(12px);
@@ -888,46 +923,749 @@ transform: scale(1.2);
 }
  
 /* RESPONSIVE */
+
+/* 1. TABLETTES EN PAYSAGE ET PETITS PC PORTABLES (en dessous de 1200px) */
 @media (max-width: 1200px) {
-  .nav-line {
+  :root {
+    --font-size-title: 36px;
+    --font-size-paragraph: 18px;
+    --font-size-subtitle: 26px;
+  }
+
+  html {
+    scroll-padding-top: 140px; /* le header sticky ne cache plus les titres au clic sur le menu */
+  }
+
+  img {
+    max-width: 100%;
+  }
+
+  /* HEADER */
+  .main-header {
+    background-color: #fff;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+    padding: 8px 0;
+    min-height: 130px;
+  }
+
+  .burger {
     display: flex;
-    flex-direction: column;
-    gap: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
   }
- 
-  .buddha-center {
+
+  .menu {
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    gap: 0;
+    background: transparent;
+    box-shadow: none;
+    backdrop-filter: none;
+    border-radius: 0;
+  }
+
+  :root {
+    --logo-w: 100px; /* largeur du logo : tout le reste s'adapte */
+  }
+
+  .logo {
     order: -1;
+    display: grid;
+    justify-items: center;
+    width: var(--logo-w);
+    height: calc(var(--logo-w) * 1.25); /* garde cercle + nom, coupe le vide du bas */
+    overflow: hidden;
+    transform: none;
+    margin: 0 auto;
   }
- 
-  .nav-group {
-    flex-direction: column;
-    width: 100%;
+
+  .buddha-center,
+  .brand-text {
+    grid-area: 1 / 1; /* les deux images au même endroit */
+    margin: 0 !important;
+    padding: 0 !important;
   }
- 
-  .btn {
-    width: 100%;
-    max-width: 300px;
-    background-color: var(--vert-light);
-    border-radius: 6px;
+
+  .buddha-center img,
+  .brand-text img {
+    display: block;
+    width: var(--logo-w);
+    height: auto;
+  }
+
+  .main-header {
+    min-height: 141px;
+  }
+
+  .link {
+    display: none;
+    margin: 0;
+    padding: 14px 18px;
+  }
+
+  /* Tiroir ouvert */
+  .menu.open {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: fit-content;
+    max-width: 85vw;
+    align-items: stretch;
+    padding: 16px 20px 20px;
+    overflow-y: auto;
+    background: #fff;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+    border-radius: 0 24px 24px 0;
+  }
+
+  .burger[aria-expanded="true"] {
+    top: 30px;
+    transform: none;
+  }
+
+  .menu.open .link {
+    display: flex;
+  }
+
+  .menu.open .logo {
+    align-self: center;
+    margin-bottom: 10px;
+  }
+
+  .link-title {
+    max-width: none;
+    opacity: 1;
+    transform: none;
+    color: var(--vertBaniere);
+  }
+
+  .link:hover .link-title,
+  .link:focus-visible .link-title {
+    color: #fff;
+  }
+
+  /* TITRES : margin à la place du padding (sinon le header cache le titre au clic) */
+  h2[class^="titre"] {
+    padding-top: 0;
+    margin-top: 90px;
     text-align: center;
   }
- 
-  .infos {
+
+  h2.titrePrestationsEtTarifs {
+    margin-top: 0;
+  }
+
+  /* TARIFS */
+  .conteneurTarifsHaut {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5rem;
+    padding-top: 1.5rem;
+  }
+
+  .seanceALaCarte,
+  .packDeTroisSeances,
+  .packDeCinqSeances {
+    width: 400px;
+    max-width: 100%;
+    height: auto;
+    min-height: 200px;
+    padding: 1rem;
+    gap: 0.5rem;
+  }
+
+  .miniTitreSeanceALaCarte {
+    margin-top: 0;
+  }
+
+  .texteSeanceALaCarte,
+  .textePackDeTroisSeances,
+  .textePackDeCinqSeances,
+  .textePackFamille,
+  .texteOffrir {
+    font-size: 22px;
+  }
+
+  .conteneurTarifsBas {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+    margin-left: 0;
+  }
+
+  .svgTarifsSvgCadeau {
+    width: 260px;
+    height: 260px;
+    margin-top: 0;
+  }
+
+  .offir {
+    width: 380px;
+    max-width: 100%;
+    margin-right: 0;
+  }
+
+  .packFamille {
+    width: 340px;
+    max-width: 100%;
+    height: auto;
+    min-height: 110px;
+    padding: 1rem;
+    gap: 0.5rem;
+  }
+
+  .textePackFamille {
+    font-size: 22px;
+  }
+
+  /* À PROPOS DE MOI : photo en haut, les 2 textes dessous */
+  .aProposDeMoi {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+  }
+
+  .imageSabine {
+    order: -1;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  .photoSabine {
+    max-width: 340px;
+    max-height: 340px;
+  }
+
+  .texteAProposDeMoiGauche,
+  .texteAProposDeMoiDroite {
+    flex: 1 1 300px;
+    padding: 0;
+    gap: 1.2rem;
+  }
+
+  /* OÙ SUIS-JE */
+  .ouSuisJe {
+    gap: 40px;
+    padding: 2rem 0;
+  }
+
+  .photoBureau {
+    max-width: 380px;
+    height: auto;
+  }
+
+  /* ACCÈS */
+  .acces {
+    gap: 40px;
+    align-items: center;
+  }
+
+  .accesPartieGauche {
+    flex: 1 1 auto;
+    min-width: 0;
+  }
+
+  .photoPlan {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+  }
+
+  .accesLien {
+    height: auto;
+    gap: 30px;
+  }
+
+  /* THÈMES SÉANCES */
+  .themes-layout {
+    grid-template-columns: minmax(0, 1fr) 220px minmax(0, 1fr);
+    gap: 20px;
+  }
+
+  .theme {
+    padding: 12px;
+    gap: 12px;
+  }
+
+  .theme-image {
+    width: 60px;
+    height: 60px;
+  }
+
+  .logo-theme {
+    width: 180px;
+  }
+
+  /* IDÉES REÇUES */
+  .ideesRecues {
+    margin-left: 80px;
+    margin-right: 80px;
+  }
+
+  /* DONC C'EST QUOI */
+  .texteDoncCestQuoi {
+    height: auto; /* la hauteur s'adapte au texte le plus long */
+    min-height: 200px;
+    margin: 50px 100px;
+  }
+
+  .flechesDoncCestQuoi {
+    margin-top: 40px;
+  }
+
+  .fleche {
+    width: auto;
+    flex: 1 1 0;
+    min-width: 0;
+    height: 80px;
+    padding: 0 26px 0 34px;
+    font-size: 16px;
+  }
+
+  .fleche.actif {
+    font-size: 16px;
+  }
+
+  /* ACTU DU CABINET */
+  .actuDuCabinet {
+    gap: 35px;
+  }
+
+  /* PENSÉE DU MOMENT */
+  .penseeDuMoment {
+    margin: 0 60px;
+  }
+
+  /* AVIS : les textes s'empilent dans la même case, la hauteur suit le plus long */
+  .texteAvis {
+    display: grid;
+    height: auto;
+    min-height: 300px;
+  }
+
+  .texteEtiquettePrenom {
+    position: static;
+    grid-area: 1 / 1;
+    font-size: 26px;
+    padding: 28px 32px;
+  }
+
+  .boutonsPrenomParceQueLeurAvisCompte {
+    gap: 30px;
+  }
+
+  /* FOOTER */
+  .navFooter {
+    gap: 40px;
+  }
+}
+
+/* 2. TABLETTES EN PORTRAIT (en dessous de 768px) */
+@media (max-width: 768px) {
+  :root {
+    --font-size-title: 32px;
+    --font-size-paragraph: 17px;
+    --font-size-subtitle: 23px;
+  }
+
+    body {
+    overflow-x: clip;
+  }
+
+  .footer {
+    padding: 30px 16px 50px;
+  }
+
+  .footerColonneReseau a {
+    flex: 0 0 40px;
+  }
+
+  .copyright {
+    margin-top: 20px;
+    padding: 0 10px;
+  }
+
+  .main-content {
+    padding: 0 1.25rem;
+  }
+
+  h2[class^="titre"] {
+    margin-top: 70px;
+  }
+
+  /* PRESTATIONS : colonnes empilées */
+  .informations {
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+  }
+
+  .seancePrestationsEtTarifs,
+  .remboursementPrestationsEtTarifs {
+    padding-top: 20px;
+    gap: 20px;
+  }
+
+  .seancePrestationsEtTarifs svg,
+  .remboursementPrestationsEtTarifs svg {
+    max-width: 100%;
+    height: auto;
+  }
+
+  /* TARIFS */
+  .conteneurTarifsHaut {
     flex-direction: column;
     align-items: center;
   }
- 
+
+  .seanceALaCarte,
+  .packDeTroisSeances,
+  .packDeCinqSeances {
+    width: 100%;
+    max-width: 400px;
+  }
+
+  .texteSeanceALaCarte,
+  .textePackDeTroisSeances,
+  .textePackDeCinqSeances,
+  .textePackFamille,
+  .texteOffrir {
+    font-size: 20px;
+  }
+
+  .conteneurTarifsBas {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .svgTarifsSvgCadeau {
+    width: 220px;
+    height: 220px;
+  }
+
+  .packFamille {
+    width: 100%;
+    max-width: 340px;
+    height: auto;
+    min-height: 110px;
+    padding: 1rem;
+  }
+
+  .offir {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    min-height: 200px;
+    padding: 1.2rem 0.5rem;
+    gap: 1rem;
+  }
+
+  .offrirBas {
+    align-items: center;
+    gap: 1.5rem;
+  }
+
+  .offrirBasGauche,
+  .offrirBasDroit {
+    margin-left: 0;
+    margin-top: 0;
+  }
+
+  /* À PROPOS DE MOI : tout en colonne */
+  .aProposDeMoi {
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: center;
+  }
+
+  .texteAProposDeMoiGauche,
+  .texteAProposDeMoiDroite {
+    flex: none;
+    width: 100%;
+  }
+
+  /* OÙ SUIS-JE */
+  .ouSuisJe {
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    padding: 1rem 0;
+  }
+
+  .photoBureau {
+    display: block;
+    margin: 0 auto;
+    max-width: 100%;
+  }
+
+  /* ACCÈS */
+  .acces {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .accesPartieGauche {
+    width: 100%;
+  }
+
+  .accesLien {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+  }
+
+  /* THÈMES : logo en haut, puis 2 colonnes */
+  .themes-layout {
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+
+  .themes-centre {
+    grid-column: 1 / -1;
+    order: -1;
+  }
+
+  .themes-colonne.droite .theme {
+    flex-direction: row;
+    text-align: left;
+  }
+
+  /* IDÉES REÇUES */
+  .ideesRecues {
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+
+  /* DONC C'EST QUOI */
+  .texteDoncCestQuoi {
+    margin: 30px 0;
+  }
+
+  .fleche {
+    height: 70px;
+    font-size: 15px;
+    padding: 0 24px 0 32px;
+  }
+
+  .fleche.actif {
+    font-size: 15px;
+  }
+
+  /* ACTU / PENSÉE */
+  .actuDuCabinet {
+    padding-top: 30px;
+    gap: 25px;
+  }
+
+  .penseeDuMoment {
+    margin: 0 10px;
+    padding-top: 30px;
+    gap: 25px;
+  }
+
+  /* AVIS */
+  .boutonsPrenomParceQueLeurAvisCompte {
+    gap: 20px;
+    padding-top: 30px;
+  }
+
+  .boutonsPrenomParceQueLeurAvisCompte button {
+    font-size: 16px;
+    line-height: 44px;
+  }
+
+  .texteAvis {
+    min-height: 260px;
+  }
+
+  .texteEtiquettePrenom {
+    font-size: 22px;
+    padding: 24px;
+  }
+
+  /* VOUS AIMEREZ PEUT-ÊTRE AUSSI */
+  .texteVousAimerezPeutEtreAussi {
+    padding-top: 30px;
+    text-align: center;
+  }
+
+  /* FOOTER : colonnes empilées et centrées */
   .navFooter {
     flex-direction: column;
     align-items: center;
-    gap: 20px;
+    gap: 30px;
+    text-align: center;
   }
- 
+
   .footerColonneCabinet {
     text-align: center;
   }
- 
+
+  .footerColonneReseau {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+  }
+
+  .footerColonneReseau h2 {
+    flex-basis: 100%;
+  }
+
   .footerColonneReseau a {
+    margin: 0;
+  }
+}
+
+/* 3. SMARTPHONES (en dessous de 480px - couvre le 368px) */
+@media (max-width: 480px) {
+  :root {
+    --font-size-title: 28px;
+    --font-size-paragraph: 16px;
+    --font-size-subtitle: 20px;
+    --logo-w: 85px;
+  }
+
+  html {
+    scroll-padding-top: 125px;
+  }
+
+  .main-content {
+    margin-top: 1.5rem;
+    padding: 0 1rem;
+  }
+
+  /* HEADER */
+  .main-header {
+    min-height: 124px;
+  }
+
+    .buddha-center {
+    margin-bottom: -4.8rem !important;
+  }
+
+  .buddha-center img {
+    width: 70px;
+  }
+
+  .brand-text img {
+    width: 105px;
+  }
+
+  .menu.open {
+    max-width: 88vw;
+    padding: 8px 12px 20px;
+  }
+
+  .link {
+    gap: 10px;
+    padding: 10px 12px;
+  }
+
+  .link-title {
+    white-space: normal; /* "Parce que leur avis compte" passe sur 2 lignes si besoin */
+  }
+
+  h2[class^="titre"] {
+    margin-top: 55px;
+  }
+
+  /* TARIFS */
+  .texteSeanceALaCarte,
+  .textePackDeTroisSeances,
+  .textePackDeCinqSeances,
+  .textePackFamille,
+  .texteOffrir {
+    font-size: 18px;
+  }
+
+  .offrirBas {
+    flex-direction: column;
+  }
+
+  /* À PROPOS */
+  .photoSabine {
+    width: min(300px, 80vw);
+    height: auto;
+  }
+
+  /* ACCÈS */
+  .accesLien {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .linkAcces {
+    width: 100%;
+    max-width: 320px;
+  }
+
+  /* THÈMES : une seule colonne */
+  .themes-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .logo-theme {
+    width: 150px;
+  }
+
+  .themes-centre h3 {
+    font-size: 1.6rem;
+  }
+
+  /* IDÉES REÇUES */
+  .ideesRecues {
     margin-left: 0;
+    margin-right: 0;
+  }
+
+  /* DONC C'EST QUOI : flèches sur 2 lignes */
+  .flechesDoncCestQuoi {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .fleche {
+    flex: 1 1 45%;
+    height: 60px;
+    font-size: 14px;
+    padding: 0 22px 0 32px;
+  }
+
+  .fleche.actif {
+    font-size: 14px;
+  }
+
+  .texteDoncCestQuoi {
+    min-height: 0;
+  }
+
+  /* AVIS */
+  .boutonsPrenomParceQueLeurAvisCompte {
+    gap: 14px;
+  }
+
+  .boutonsPrenomParceQueLeurAvisCompte button {
+    font-size: 15px;
+    line-height: 40px;
+    padding: 0 14px;
+  }
+
+  .texteEtiquettePrenom {
+    font-size: 17px;
+    padding: 20px 16px;
+  }
+
+  /* FOOTER */
+  .navFooter p,
+  .copyright {
+    font-size: 15px;
   }
 }
