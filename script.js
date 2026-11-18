@@ -86,3 +86,25 @@ boutonsParceQueLeurAvisCompte.forEach(boutonParceQueLeurAvisCompte => {
 });
 
 boutonsParceQueLeurAvisCompte[0].click();
+
+
+// PARTIE HEADER RESPONSIVE
+
+const burger = document.querySelector('.burger');
+const menu = document.querySelector('.menu');
+
+function fermerMenu() {
+  menu.classList.remove('open');
+  burger.setAttribute('aria-expanded', 'false');
+  burger.setAttribute('aria-label', 'Ouvrir le menu');
+}
+
+burger.addEventListener('click', () => {
+  const ouvert = menu.classList.toggle('open');
+  burger.setAttribute('aria-expanded', ouvert);
+  burger.setAttribute('aria-label', ouvert ? 'Fermer le menu' : 'Ouvrir le menu');
+});
+
+menu.querySelectorAll('.link').forEach(lien => {
+  lien.addEventListener('click', fermerMenu);
+});
