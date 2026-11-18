@@ -1524,6 +1524,12 @@ transform: scale(1.2);
   }
 }
 
+@media (min-width: 769px) {
+  .themes-layout {
+    align-items: start;
+  }
+}
+
 /* 3. SMARTPHONES (en dessous de 480px - couvre le 368px) */
 @media (max-width: 480px) {
   :root {
