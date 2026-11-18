@@ -9,7 +9,12 @@
 
 <body>
     <header class="main-header">
-        <nav class="menu">
+        <button class="burger" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <nav class="menu" id="id">
             <a href="https://www.onedoc.ch/fr/kinesiologue/le-grand-saconnex/pcrsu/sabine-jaquet-gut" class="link" aria-label="prendreRendezVous">
                 <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.1" style="stroke-width:1.1" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg">
                   <path d="M3 9H21M9 15L11 17L15 13M7 3V5M17 3V5M6.2 21H17.8C18.9201 21 19.4802 21 19.908 20.782C20.2843 20.5903 20.5903 20.2843 20.782 19.908C21 19.4802 21 18.9201 21 17.8V8.2C21 7.07989 21 6.51984 20.782 6.09202C20.5903 5.71569 20.2843 5.40973 19.908 5.21799C19.4802 5 18.9201 5 17.8 5H6.2C5.0799 5 4.51984 5 4.09202 5.21799C3.71569 5.40973 3.40973 5.71569 3.21799 6.09202C3 6.51984 3 7.07989 3 8.2V17.8C3 18.9201 3 19.4802 3.21799 19.908C3.40973 20.2843 3.71569 20.5903 4.09202 20.782C4.51984 21 5.07989 21 6.2 21Z"/>
@@ -177,7 +182,7 @@
         </div>
 
         <!-- PARTIE TARIFS -->
-         
+
         <div class="tarifs">
             <div class="conteneurTarifsHaut">
                 <div class="seanceALaCarte">
@@ -300,7 +305,7 @@
                         <span class="linkAcces-titre">Google Maps</span>
                     </a>
                         
-                    <a href="https://www.waze.com/fr/live-map/directions/ch/ge/le-grand-saconnex/chem.-du-pavillon-2?to=place.ChIJFU5AlWFkjEcRLXTA-s1cws4" class="linkAcces" aria-label="waze" target="_blank" rel="noopener">
+                    <a href="https://www.waze.com/fr/live-map/directions?to=ll.46.2384627%2C6.1221548" class="linkAcces" aria-label="waze" target="_blank" rel="noopener">
                         <svg viewBox="0 0 600 600" width="55" height="55" xmlns="http://www.w3.org/2000/svg">
                             <rect width="600" height="600" rx="130" fill="#33CCFF"/>
                             <path d="M145 300C145 322 128 336 106 343C94 347 92 358 98 368C120 408 160 432 215 446L322 450A178 178 0 1 0 145 300Z" fill="#fff" stroke="#000" stroke-width="22" stroke-linejoin="round"/>
@@ -658,5 +663,4 @@
     </footer>
     <script src="script.js"></script>
 </body>
-
 </html>
