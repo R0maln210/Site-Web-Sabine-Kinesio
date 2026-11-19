@@ -631,6 +631,7 @@ transform: scale(1.2);
   align-items: center;
   text-align: center;
   gap: 22px;
+  margin-top: -45%;
 }
 
 .logo-theme {
@@ -678,7 +679,7 @@ transform: scale(1.2);
 
 /* SECTION DONC C'EST QUOI */
 
-.texteDoncCestQuoi {
+.contTexteDoncCestQuoi {
   display: grid;
   align-items: center;
   height: 200px;
@@ -740,6 +741,16 @@ transform: scale(1.2);
 
 .fleche.actif::before {
   background: #f5f5f5;
+}
+
+.texteDoncCestQuoi {
+  color: var(--vertBaniere);
+  font-size: var(--font-size-paragraph);
+  text-align: center;
+  padding-left: 25%;
+  padding-right: 25%;
+  padding-top: 5%;
+  line-height: 2.5rem;
 }
 
 /* SECTION ACTU DU CABINET */
