@@ -1446,6 +1446,10 @@ transform: scale(1.2);
     text-align: left;
   }
 
+  .logo-theme {
+    margin-top: 17rem;
+  }
+
   /* IDÉES REÇUES */
   .ideesRecues {
     margin-left: 20px;
@@ -1643,6 +1647,12 @@ transform: scale(1.2);
   }
 
   /* DONC C'EST QUOI */
+
+  .texteFlecheDoncCestQuoi{
+    font-size: 12px;
+    line-height: 1rem;
+  }
+
   .flechesDoncCestQuoi {
     flex-wrap: wrap;
     gap: 10px;
