@@ -48,7 +48,7 @@ function afficherCitation(index) {
 }
 
 // Chargement du JSON et initialisation du timer
-fetch('citations.json')
+fetch('citations2.json')
     .then(response => response.json())
     .then(data => {
         citationsList = data.citation;
