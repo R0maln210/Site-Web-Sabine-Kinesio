@@ -1,0 +1,410 @@
+{
+    "citation": [
+        {
+            "id": 1,
+            "title": "« Ne dis pas « Plus tard ! » à l’amour. »",
+            "author": "William Shakespeare ",
+            "comment": ""
+        },
+        {
+            "id": 2,
+            "title": "« N’imitez rien ni personne. Un lion qui copie un lion devient un singe. »",
+            "author": "Victor Hugo",
+            "comment": ""
+        },
+        {
+            "id": 3,
+            "title": "« Les belles actions cachées sont les plus estimables. »",
+            "author": "Blaise Pascal",
+            "comment": "mais n’oublie pas d’être doux avec toi-même également"
+        },
+        {
+            "id": 4,
+            "title": "« Ce que tu es est un cadeau de Dieu. Ce que tu deviens est un cadeau à Dieu. »",
+            "author": "Bouddha",
+            "comment": ""
+        },
+        {
+            "id": 5,
+            "title": "« Les larmes qui coulent sont amères, mais plus amères encore sont celles qui ne coulent pas. »",
+            "author": "Proverbe populaire",
+            "comment": ""
+        },
+        {
+            "id": 6,
+            "title": "« Un sourire coûte moins cher que l’électricité, mais il donne autant de lumière. »",
+            "author": "Abbé Jean-Pierre Rousselot",
+            "comment": ""
+        },
+        {
+            "id": 7,
+            "title": "« Personne ne sait combien de temps peut durer une seconde de souffrance. »",
+            "author": "Graham Greene (écrivain et scénariste GB 20ème siècle)",
+            "comment": ""
+        },
+        {
+            "id": 8,
+            "title": "« La vie est une fleur. L’amour en est le miel. »",
+            "author": "Victor Hugo",
+            "comment": ""
+        },
+        {
+            "id": 9,
+            "title": "« Il est hélas devenu évident aujourd’hui que notre technologie a dépassé notre humanité. »",
+            "author": "Albert Einstein",
+            "comment": ""
+        },
+        {
+            "id": 10,
+            "title": "« Être conscient de son ignorance, c’est tendre vers la connaissance. »",
+            "author": "Benjamin Disraeli (home d’état et écrivain GB 19ème siècle)",
+            "comment": ""
+        },
+        {
+            "id": 11,
+            "title": "« Il n’y a pas de question idiote, seulement une réponse idiote. »",
+            "author": "Coluche",
+            "comment": ""
+        },
+        {
+            "id": 12,
+            "title": "« Incarnez vous-même le changement auquel vous voulez que les autres aspirent. »",
+            "author": "Ghandi",
+            "comment": ""
+        },
+        {
+            "id": 13,
+            "title": "« Ce qui me bouleverse, ce n’est pas que tu m’aies menti, c’est que désormais je ne pourrais plus te croire. »",
+            "author": "Friedrich Nietzsche",
+            "comment": ""
+        },
+        {
+            "id": 14,
+            "title": "« Vous continuerez à souffrir si vous réagissez émotionnellement à tout ce qu’on vous dit. Le vrai pouvoir, c’est s’asseoir et observer les choses avec logique.\n Le vrai pouvoir est la retenue.\n Si les mots vous contrôlent, cela signifie que tout le monde peut vous contrôler.\n Respirez et laissez les choses passer. »",
+            "author": "Bruce Lee",
+            "comment": ""
+        },
+        {
+            "id": 15,
+            "title": "« Plus on pédale moins fort, moins on avance plus vite. »",
+            "author": "Coluche",
+            "comment": "ne calez pas votre rythme sur celui des autres, mais adaptez-le à vous"
+        },
+        {
+            "id": 16,
+            "title": "« Nous avons tellement de façons complexes d’aimer et un seul mot simple pour l’exprimer. »",
+            "author": "Jacques Sternberg (écrivain belge 20ème siècle)",
+            "comment": ""
+        },
+        {
+            "id": 17,
+            "title": "« Les larmes prouvent l’affection mais ne sont pas un . »",
+            "author": "William Shakespeare",
+            "comment": ""
+        },
+        {
+            "id": 18,
+            "title": "« Un seul être vous manque et tout est dépeuplé ! »",
+            "author": "Alphonse de Lamartine (écrivain français 19ème siècle)",
+            "comment": ""
+        },
+        {
+            "id": 19,
+            "title": "« L’opinion des autres sur moi ne m’importe qu’en fonction de la mienne sur eux. »",
+            "author": "Louis Scutenaire (poète belge)",
+            "comment": ""
+        },
+        {
+            "id": 20,
+            "title": "« Dire de soi plus de mal qu’il n’y en ait, c’est sottise, non modestie. »",
+            "author": "Michel Eyquem de Montaigne",
+            "comment": ""
+        },
+        {
+            "id": 21,
+            "title": "« Si l’argent ne fait pas le bonheur, rendez-le ! »",
+            "author": "Jules Renard",
+            "comment": ""
+        },
+        {
+            "id": 22,
+            "title": "« L’intelligence, c’est la faculté d’adaptation. »",
+            "author": "André Gide",
+            "comment": ""
+        },
+        {
+            "id": 23,
+            "title": "« 80% des gens ne comprennent pas.\n Ce n’est pas en étant motivé qu’on arrive à ce qu’on veut, mais en étant discipliné.\n La motivation te fait commencer, la discipline te fait continuer. »",
+            "author": "Successevolution",
+            "comment": ""
+        },
+        {
+            "id": 24,
+            "title": "« Naître dans une écurie ne fait pas de toi un cheval. »",
+            "author": "Arthur Wellesley, Duc de Wellington",
+            "comment": ""
+        },
+        {
+            "id": 25,
+            "title": "« Soutiens ton ami surtout quand il a tort ; quand il a raison, il n’a pas besoin de toi. »",
+            "author": "Henri Lavedan",
+            "comment": ""
+        },
+        {
+            "id": 26,
+            "title": "« Cuisiner suppose une tête légère, un esprit généreux et un coeur large. »",
+            "author": "Paul Gauguin",
+            "comment": ""
+        },
+        {
+            "id": 27,
+            "title": "« J’aime donc je suis. Dès que je cesse d’aimer, je cesse d’être. »",
+            "author": "Gilbert Cesbron",
+            "comment": ""
+        },
+        {
+            "id": 28,
+            "title": "« Je sais et je sens que faire du bien est le plus vrai bonheur que le coeur humain puisse goûter. »",
+            "author": "Koan Zen",
+            "comment": ""
+        },
+        {
+            "id": 29,
+            "title": "« Les trois-quarts de nos maux viennent de l’imagination. »",
+            "author": "Jean-Charles Harvey",
+            "comment": ""
+        },
+        {
+            "id": 30,
+            "title": "« Les malheureux sont ingrats ; cela fait partie de leur malheur. »",
+            "author": "Victor Hugo",
+            "comment": ""
+        },
+        {
+            "id": 31,
+            "title": "« La franchise ne consiste pas à dire ce qu’on pense, mais à penser ce qu’on dit. »",
+            "author": "Coluche",
+            "comment": ""
+        },
+        {
+            "id": 32,
+            "title": "« La beauté est dans le regard des yeux de celui qui regarde. »",
+            "author": "Oscar Wilde",
+            "comment": ""
+        },
+        {
+            "id": 33,
+            "title": "« C’est parfois d’une situation désespérée que jaillit l’espoir. »",
+            "author": "Lao She",
+            "comment": ""
+        },
+        {
+            "id": 34,
+            "title": "« Aujourd’hui est le premier jour du reste de ma vie. »",
+            "author": "Victor Hugo",
+            "comment": ""
+        },
+        {
+            "id": 35,
+            "title": "« Cuisiner suppose une tête légère, un esprit généreux et un coeur large. »",
+            "author": "Paul Gauguin",
+            "comment": ""
+        },
+        {
+            "id": 36,
+            "title": "« Il ne faut pas chercher à rajouter des années à sa vie, mais plutôt essayer de rajouter de la vie à ses années. »",
+            "author": "Oscar Wilde",
+            "comment": ""
+        },
+        {
+            "id": 37,
+            "title": "« Beaucoup de chemins mènent à la réussite mais un seul mène immanquablement à l'échec : celui qui consiste à tenter de plaire à tout le monde »",
+            "author": "Benjamin Franklin (Journaliste et philosophe américain, 18<sup>ème</sup> siècle)",
+            "comment": ""
+        },
+        {
+            "id": 38,
+            "title": "« Nous ne devons pas avoir peur de nous confronter à nous-mêmes\n Du chaos naissent les étoiles »",
+            "author": "Charlie Chaplin",
+            "comment": ""
+        },
+        {
+            "id": 39,
+            "title": "« Le problème est que nous cherchons quelqu'un pour vieillir ensemble.\n Alors que le secret est de trouver quelqu'un avec qui rester enfant. »",
+            "author": "Charles Bukowski (Écrivain US 20<sup>ème</sup> siècle)",
+            "comment": ""
+        },
+        {
+            "id": 40,
+            "title": "« L'Humanité devrait être notre race.\n L'Amour notre religion. »",
+            "author": "Auteur inconnu",
+            "comment": ""
+        },
+        {
+            "id": 41,
+            "title": "« Être beau veut dire être soi-même.\n Vous n'avez pas besoin d'être accepté par les autres, vous avez besoin de vous accepter vous-même. »",
+            "author": "Thich Naht Hanh (Moine bouddhiste vietnamien 20 <sup>ème</sup> siècle",
+            "comment": ""
+        },
+        {
+            "id": 42,
+            "title": "« Plus il y a de connaissance, moins il y a d'ego,\n Moins il y a de connaissance, plus il y a d'ego »",
+            "author": "Albert Einstein",
+            "comment": ""
+        },
+        {
+            "id": 43,
+            "title": "« La petience n'est pas la capacité d'attendre, mais la capacité à maintenir une attitude positive pendant que vous attendez »",
+            "author": "Joyce Meyer (Autrice américain 20 <sup>ème</sup> siècle)",
+            "comment": ""
+        },
+        {
+            "id": 44,
+            "title": "« Tout ce que tu feras sera dérisoire, mais il est essentiel que tu le fasses »",
+            "author": "Gandhi",
+            "comment": ""
+        },
+        {
+            "id": 45,
+            "title": "« Rien n'est plus puissant qu'une idée dont l'heure est venue »",
+            "author": "Victor Hugo",
+            "comment": ""
+        },
+        {
+            "id": 46,
+            "title": "« J'ai décidé d'être heureux parce que c'est bon pour la santé »",
+            "author": "François-Marie Voltaire",
+            "comment": ""
+        },
+        {
+            "id": 47,
+            "title": "« La créativité n'est pas un talent.\n C'est un état d'être\n C'est une manière de fonctionner »",
+            "author": "John Cleese Monty Python",
+            "comment": ""
+        },
+        {
+            "id": 48,
+            "title": "« Nous avons tous déjà tout ce qu'il faut pour être les plus heureux du monde.\n\n Il nous reste simplement à nous en souvenir en permanence. »",
+            "author": "Hal Elrod (Auteur américain, 20<sup>ème</sup> siècle)",
+            "comment": ""
+        },
+        {
+            "id": 49,
+            "title": "« Attendre sa chance est vain\n La tenter ne suffit pas.\n Il faut la forcer. »",
+            "author": "Paul Carvel (Auteur belge, 20<sup>ème</sup> siècle)",
+            "comment": ""
+        },
+        {
+            "id": 50,
+            "title": "",
+            "author": "",
+            "comment": ""
+        },
+        {
+            "id": 51,
+            "title": "",
+            "author": "",
+            "comment": ""
+        },
+        {
+            "id": 52,
+            "title": "",
+            "author": "",
+            "comment": ""
+        },
+        {
+            "id": 53,
+            "title": "« L'homme moderne communique souvent mieux avec sa souris qu'avec sa langue »",
+            "author": "Paul Carvel (Auteur belge, 20<sup>ème</sup> siècle)",
+            "comment": ""
+        },
+        {
+            "id": 54,
+            "title": "",
+            "author": "",
+            "comment": ""
+        },
+        {
+            "id": 55,
+            "title": "",
+            "author": "",
+            "comment": ""
+        },
+        {
+            "id": 56,
+            "title": "",
+            "author": "",
+            "comment": ""
+        },
+        {
+            "id": 57,
+            "title": "",
+            "author": "",
+            "comment": ""
+        },
+        {
+            "id": 58,
+            "title": "",
+            "author": "",
+            "comment": ""
+        },
+        {
+            "id": 59,
+            "title": "",
+            "author": "",
+            "comment": ""
+        },
+        {
+            "id": 60,
+            "title": "Ne dis jamais du mal de ton travail car ce pourrait être le seul mal que les autres y trouvent",
+            "author": "Paul Carvel (Auteur belge, 20<sup>ème</sup> siècle)",
+            "comment": ""
+        },
+        {
+            "id": 61,
+            "title": "",
+            "author": "",
+            "comment": ""
+        },
+        {
+            "id": 62,
+            "title": "",
+            "author": "",
+            "comment": ""
+        },
+        {
+            "id": 63,
+            "title": "",
+            "author": "",
+            "comment": ""
+        },
+        {
+            "id": 64,
+            "title": "",
+            "author": "",
+            "comment": ""
+        },
+        {
+            "id": 65,
+            "title": "",
+            "author": "",
+            "comment": ""
+        },
+        {
+            "id": 66,
+            "title": "",
+            "author": "",
+            "comment": ""
+        },
+        {
+            "id": 67,
+            "title": "",
+            "author": "",
+            "comment": ""
+        },
+        {
+            "id": 68,
+            "title": "",
+            "comment": ""
+        }]
+}
