@@ -683,7 +683,7 @@ transform: scale(1.2);
   display: grid;
   align-items: center;
   height: 200px;
-  margin: 50px 350px;
+  margin: 50px 150px;
   align-content: center;
   color: var(--vertBaniere);
   line-height: 1.5;
@@ -1453,7 +1453,7 @@ transform: scale(1.2);
   }
 
   /* DONC C'EST QUOI */
-  .texteDoncCestQuoi {
+  .contTexteDoncCestQuoi {
     margin: 30px 0;
   }
 
@@ -1465,6 +1465,11 @@ transform: scale(1.2);
 
   .fleche.actif {
     font-size: 15px;
+  }
+
+  .texteDoncCestQuoi {
+    margin: 3rem 10px;
+    padding: 0px 0px;
   }
 
   /* ACTU / PENSÉE */
