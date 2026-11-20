@@ -1629,6 +1629,7 @@ transform: scale(1.2);
 
   .logo-theme {
     width: 150px;
+    margin-top: 5rem;
   }
 
   .themes-centre h3 {
