@@ -171,6 +171,7 @@ body {
 .titrePrestationsEtTarifs, .titreTarifs, .titreAProposDeMoi, .titreOuSuisJe, .titreAcces, .titrePourLesCurieux, .titreThemeSeance, .titreIdeesRecues, .titreDoncCestQuoi, .titreActuDuCabinet, .titrePenseeDuMoment, .titreParceQueLeurAvisCompte, .titreVousAimerezPeutEtreAussi {
   display: flex;
   padding-top: 125px;
+  padding-bottom: 5rem;
   font-family: var(--font-family);
   color: var(--vertBaniere);
   font-size: var(--font-size-title);
@@ -696,6 +697,7 @@ transform: scale(1.2);
   visibility: hidden;
   transition: opacity 0.6s ease, visibility 0.6s ease;
   font-size: var(--font-size-paragraph);
+  margin-bottom: 3rem;
 }
 
 .texteFlecheDoncCestQuoi.actif {
@@ -1225,7 +1227,7 @@ transform: scale(1.2);
   }
 
   .flechesDoncCestQuoi {
-    margin-top: 40px;
+    margin-top: 70px;
   }
 
   .fleche {
@@ -1473,7 +1475,7 @@ transform: scale(1.2);
 
   .texteDoncCestQuoi {
     margin: 3rem 10px;
-    padding: 0px 0px;
+    padding: 0px 0px;;
   }
 
   /* ACTU / PENSÉE */
