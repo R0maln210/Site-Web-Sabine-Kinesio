@@ -108,3 +108,30 @@ burger.addEventListener('click', () => {
 menu.querySelectorAll('.link').forEach(lien => {
   lien.addEventListener('click', fermerMenu);
 });
+
+// PARTIE HEADER EN GRAND QUAND ON EST SUR LA SECTION
+
+const liens = document.querySelectorAll('.menu .link[href^="#"]');
+
+const sections = [];
+liens.forEach(lien => {
+  const cible = document.querySelector(lien.getAttribute('href'));
+  if (cible) sections.push({ lien, cible });
+});
+
+function majMenuActif() {
+  const repere = window.scrollY + 160;
+  let courant = null;
+
+  sections.forEach(({ lien, cible }) => {
+    if (cible.getBoundingClientRect().top + window.scrollY <= repere) {
+      courant = lien;
+    }
+  });
+
+  liens.forEach(lien => lien.classList.toggle('actif', lien === courant));
+}
+
+window.addEventListener('scroll', majMenuActif, { passive: true });
+window.addEventListener('resize', majMenuActif);
+majMenuActif();
