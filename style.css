@@ -1460,7 +1460,8 @@ transform: scale(1.2);
 
   /* DONC C'EST QUOI */
   .contTexteDoncCestQuoi {
-    margin: 30px 0;
+    margin: 6rem 0;
+    background-color: red;
   }
 
   .fleche {
@@ -1475,7 +1476,7 @@ transform: scale(1.2);
 
   .texteDoncCestQuoi {
     margin: 3rem 10px;
-    padding: 0px 0px;;
+    padding: 0px 0px;
   }
 
   /* ACTU / PENSÉE */
