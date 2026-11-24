@@ -135,6 +135,22 @@ body {
 .link:focus-visible svg {
   filter: brightness(0) invert(1);
 }
+
+.link.actif {
+  background: var(--vertBaniere);
+  color: #fff;
+}
+
+.link.actif .link-title {
+  max-width: 236px;
+  opacity: 1;
+  transform: translateX(0);
+  color: #fff;
+}
+
+.link.actif svg {
+  filter: brightness(0) invert(1);
+}
  
 .logo {
   display: flex;
@@ -934,7 +950,84 @@ transform: scale(1.2);
   font-size: var(--font-size-paragraph);
   color: #666;
 }
- 
+
+/* AJOUT DE MODIFICATIONS POUR LE HEADER */
+
+/* Bouton "Prendre rendez-vous" toujours ouvert */
+.link[aria-label="prendreRendezVous"] {
+  background: #00674F;
+  color: #fff;
+}
+
+.link[aria-label="prendreRendezVous"] svg {
+  filter: brightness(0) invert(1);
+}
+
+.rdvMobile {
+  display: none;
+}
+
+/* PC : titres des liens ouverts sur deux lignes */
+@media (min-width: 1201px) {
+  /* Les liens ne s'étirent plus avec la ligne la plus haute */
+  .menu {
+    align-items: center;
+  }
+
+  .link {
+    position: relative;
+    z-index: 1;
+  }
+
+  /* Repos : titre caché, avec sa vraie mise en forme */
+  .link .link-title {
+    max-width: 0;
+    overflow: hidden;
+    white-space: normal;
+    line-height: 1.1;
+    font-size: 14px;
+    opacity: 0;
+    transform: none;
+    transition: opacity 0.3s;
+    text-align: center;
+    max-height: 30px;
+  }
+
+  /* Visible : survol, focus, lien actif, bouton rendez-vous */
+  .link:hover .link-title,
+  .link:focus-visible .link-title,
+  .link.actif .link-title,
+  .link[aria-label="prendreRendezVous"] .link-title {
+    max-width: 130px;
+    opacity: 1;
+    color: #fff;
+  }
+
+  /* Les liens ouverts ont un padding vertical réduit */
+  .link:hover,
+  .link:focus-visible,
+  .link.actif,
+  .link[aria-label="prendreRendezVous"] {
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+}
+
+/* PC moyens : on resserre un peu pour que tout tienne */
+@media (min-width: 1201px) and (max-width: 1600px) {
+  .menu {
+    gap: 6px;
+  }
+
+  .link {
+    padding: 18px 10px;
+  }
+}
+
+.rdvMobile {
+  display: none;
+}
+
 /* RESPONSIVE */
 
 /* 1. TABLETTES EN PAYSAGE ET PETITS PC PORTABLES */
@@ -1056,6 +1149,10 @@ transform: scale(1.2);
     color: var(--vertBaniere);
   }
 
+  .link.actif .link-title {
+    color: #fff;
+  }
+
   .link:hover .link-title,
   .link:focus-visible .link-title {
     color: #fff;
@@ -1069,6 +1166,37 @@ transform: scale(1.2);
 
   h2.titrePrestationsEtTarifs {
     margin-top: 0;
+  }
+
+  /* MODIFICATIONS POUR LE HEADER */
+
+    /* Le lien disparaît du tiroir */
+  .link[aria-label="prendreRendezVous"] {
+    display: none !important;
+  }
+
+  /* Il apparaît à droite du logo */
+  .rdvMobile {
+    display: flex;
+    position: absolute;
+    top: 50%;
+    right: 16px;
+    transform: translateY(-50%);
+    align-items: center;
+    gap: 8px;
+    padding: 10px 16px;
+    border-radius: 999px;
+    background: var(--vertBaniere);
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 15px;
+  }
+
+  .rdvMobile svg {
+    width: 24px;
+    height: 24px;
+    flex-shrink: 0;
   }
 
   /* TARIFS */
@@ -1701,5 +1829,16 @@ transform: scale(1.2);
   .navFooter p,
   .copyright {
     font-size: 15px;
+  }
+}
+
+@media (max-width: 600px) {
+  .rdvMobile span {
+    display: none;
+  }
+
+  .rdvMobile {
+    padding: 10px;
+    right: 12px;
   }
 }
