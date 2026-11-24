@@ -1350,8 +1350,7 @@ transform: scale(1.2);
   /* DONC C'EST QUOI */
 
   .contTexteDoncCestQuoi {
-    background-color: red;
-    margin-bottom: 5rem;
+    margin-bottom: 2.5rem;
   }
 
   .texteDoncCestQuoi {
@@ -1783,6 +1782,10 @@ transform: scale(1.2);
   }
 
   /* DONC C'EST QUOI */
+
+  .contTexteDoncCestQuoi {
+    margin-bottom: 2.5rem;
+  }
 
   .texteFlecheDoncCestQuoi{
     font-size: 12px;
