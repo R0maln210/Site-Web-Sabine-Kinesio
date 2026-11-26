@@ -135,3 +135,15 @@ function majMenuActif() {
 window.addEventListener('scroll', majMenuActif, { passive: true });
 window.addEventListener('resize', majMenuActif);
 majMenuActif();
+
+// Défilement vers la section sans ajouter #section dans l'URL
+
+document.querySelectorAll('.menu .link[href^="#"]').forEach(lien => {
+  lien.addEventListener('click', e => {
+    const cible = document.querySelector(lien.getAttribute('href'));
+    if (!cible) return;
+
+    e.preventDefault();
+    cible.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  });
+});
