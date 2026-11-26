@@ -1,46 +1,137 @@
-// BOUTON THÈME CLAIR ET THÈME SOMBRE
+// PARTIE DONC C'EST QUOI ?
 
-const bouton = document.querySelector(".boutonClairSombre");
+const boutonsDoncCestQuoi = document.querySelectorAll(".fleche");
+const textesDoncCestQuoi = document.querySelectorAll(".texteFlecheDoncCestQuoi");
 
-bouton.addEventListener("click", () => {
-  const html = document.documentElement;
-  const nouveauTheme = html.getAttribute("data-theme") === "dark" ? "light" : "dark";
-  html.setAttribute("data-theme", nouveauTheme);
-  localStorage.setItem("theme", nouveauTheme);
+boutonsDoncCestQuoi.forEach(boutonDoncCestQuoi => {
+    boutonDoncCestQuoi.addEventListener('click', () => {
+        const idTexte = boutonDoncCestQuoi.dataset.avis;
+
+        boutonsDoncCestQuoi.forEach(b => b.classList.remove('actif'));
+        textesDoncCestQuoi.forEach(t => t.classList.remove('actif'));
+
+        boutonDoncCestQuoi.classList.add('actif');
+        document.getElementById(idTexte).classList.add('actif');
+    });
 });
 
-// ANNÉE QUI CHANGE
+boutonsDoncCestQuoi[0].click();
 
-const debut = new Date(2023, 8);
-const aujourdhui = new Date();
+// PARTIE PENSÉE DU MOMENT
 
-let nombreAnnee = aujourdhui.getFullYear() - debut.getFullYear();
+let citationsList = [];
+let currentIndex = 1;
 
-if (aujourdhui.getMonth() < debut.getMonth()) {
-  nombreAnnee--;
+// Fonction pour afficher une citation selon son index dans le tableau
+function afficherCitation(index) {
+    const bloc = document.getElementById('blocPensee');
+    const citation = citationsList[index];
+
+    if (!citation) return;
+
+    // Découpe le titre si le JSON contient des sauts de ligne (\n)
+    const lignes = citation.title.split('\n').filter(l => l.trim() !== '');
+
+    // Génère les paragraphes avec tes classes CSS
+    let htmlContent = lignes.map(ligne =>`<p class="textePenseeDuMoment"><b>${ligne}</b></p>`).join('');
+
+    // Ajoute l'auteur si présent
+    if (citation.author && citation.author.trim() !== '') {
+        htmlContent += `<p class="textePenseeDuMoment"><em>— ${citation.author}</em></p>`;
+    }
+    // Ajoute le commentaire si présent
+    if (citation.comment && citation.comment.trim() !== '') {
+        htmlContent += `<p class="commentairePenseeDuMoment">${citation.comment.trim()}</p>`;
+    }
+
+    bloc.innerHTML = htmlContent;
 }
 
-document.getElementById("nombreAnnee").textContent = nombreAnnee;
+// Chargement du JSON et initialisation du timer
+fetch('citations2.json')
+    .then(response => response.json())
+    .then(data => {
+        citationsList = data.citation;
 
-// BOITE DIALOG
+        if (citationsList.length > 0) {
+            // Affichage immédiat de la première citation (index 0)
+            afficherCitation(currentIndex);
 
-const boutonProjet = document.querySelectorAll("[data-dialog]");
+            // Changement de citation toutes les semaines (604800000 ms)
+            setInterval(() => {
+                currentIndex = (currentIndex + 1) % citationsList.length; // Boucle de 0 à la fin
+                afficherCitation(currentIndex);
+            }, 604800000);
+        }
+    })
+    .catch(err => console.error("Erreur chargement citations.json :", err));
 
-boutonProjet.forEach((bouton) => {
-  bouton.addEventListener("click", () => {
-    const dialog = document.getElementById(bouton.dataset.dialog);
-    dialog.showModal();
-  });
+
+
+// PARTIE PARCE QUE LEUR AVIS COMPTE
+
+const boutonsParceQueLeurAvisCompte = document.querySelectorAll(".miniTitreEtiquettePrenom");
+const textesParceQueLeurAvisCompte = document.querySelectorAll(".texteEtiquettePrenom");
+
+boutonsParceQueLeurAvisCompte.forEach(boutonParceQueLeurAvisCompte => {
+    boutonParceQueLeurAvisCompte.addEventListener('click', () => {
+        const idTexte = boutonParceQueLeurAvisCompte.dataset.avis;
+
+        boutonsParceQueLeurAvisCompte.forEach(b => b.classList.remove('actif'));
+        textesParceQueLeurAvisCompte.forEach(t => t.classList.remove('actif'));
+
+        boutonParceQueLeurAvisCompte.classList.add('actif');
+        document.getElementById(idTexte).classList.add('actif');
+    });
 });
 
-document.querySelectorAll(".fermerDialog").forEach((bouton) => {
-  bouton.addEventListener("click", () => {
-    bouton.closest("dialog").close();
-  });
+boutonsParceQueLeurAvisCompte[0].click();
+
+
+// PARTIE HEADER RESPONSIVE
+
+const burger = document.querySelector('.burger');
+const menu = document.querySelector('.menu');
+
+function fermerMenu() {
+  menu.classList.remove('open');
+  burger.setAttribute('aria-expanded', 'false');
+  burger.setAttribute('aria-label', 'Ouvrir le menu');
+}
+
+burger.addEventListener('click', () => {
+  const ouvert = menu.classList.toggle('open');
+  burger.setAttribute('aria-expanded', ouvert);
+  burger.setAttribute('aria-label', ouvert ? 'Fermer le menu' : 'Ouvrir le menu');
 });
 
-document.querySelectorAll("dialog").forEach((dialog) => {
-  dialog.addEventListener("click", (event) => {
-    if (event.target === dialog) dialog.close();
-  });
+menu.querySelectorAll('.link').forEach(lien => {
+  lien.addEventListener('click', fermerMenu);
 });
+
+// PARTIE HEADER EN GRAND QUAND ON EST SUR LA SECTION
+
+const liens = document.querySelectorAll('.menu .link[href^="#"]');
+
+const sections = [];
+liens.forEach(lien => {
+  const cible = document.querySelector(lien.getAttribute('href'));
+  if (cible) sections.push({ lien, cible });
+});
+
+function majMenuActif() {
+  const repere = window.scrollY + 160;
+  let courant = null;
+
+  sections.forEach(({ lien, cible }) => {
+    if (cible.getBoundingClientRect().top + window.scrollY <= repere) {
+      courant = lien;
+    }
+  });
+
+  liens.forEach(lien => lien.classList.toggle('actif', lien === courant));
+}
+
+window.addEventListener('scroll', majMenuActif, { passive: true });
+window.addEventListener('resize', majMenuActif);
+majMenuActif();
