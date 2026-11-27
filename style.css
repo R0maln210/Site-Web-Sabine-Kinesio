@@ -1,10 +1,8 @@
 :root {
   --vert: rgb(51, 91, 43);
   --vertBaniere: #00674F;
-  --vert-light: rgba(51, 91, 43, 0.15);
   --font-family: Georgia, serif;
   --menu-bg: rgba(255, 255, 255, 0.75); 
-  --accent: #2563eb;
   --font-size-title: 40px;
   --font-size-paragraph: 20px;
   --font-size-subtitle: 30px;
